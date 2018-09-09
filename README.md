@@ -1,7 +1,7 @@
 
 # WikiWorldOrder/SurvLoopOrg
 
-[![Laravel](https://img.shields.io/badge/Laravel-5.3-orange.svg?style=flat-square)](http://laravel.com)
+[![Laravel](https://img.shields.io/badge/Laravel-5.6-orange.svg?style=flat-square)](http://laravel.com)
 [![SurvLoop](https://img.shields.io/badge/SurvLoop-0.0-orange.svg?style=flat-square)](https://github.com/wikiworldorder/survloop)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
@@ -20,9 +20,9 @@ SurvLoop is a Laravel-based engine for designing a database and creating a mobil
 
 # <a name="requirements"></a>Requirements
 
-* php: >=5.6.4
-* <a href="https://packagist.org/packages/laravel/framework" target="_blank">laravel/framework</a>: 5.3.*
-* <a href="https://packagist.org/packages/wikiworldorder/survloop" target="_blank">wikiworldorder/survloop</a>: 0.*
+* php: >=5.7.1
+* <a href="https://packagist.org/packages/laravel/framework" target="_blank">laravel/framework</a>: 5.6.*
+* <a href="https://packagist.org/packages/wikiworldorder/survloop" target="_blank">wikiworldorder/survloop</a>: v0.0.11
 
 # <a name="getting-started"></a>Getting Started
 
@@ -31,7 +31,7 @@ development environment, Homestead:
 <a href="http://wikiworldorder.org/2016/11/26/coding-with-laravel-installing-homestead-on-a-mac/" 
     target="_blank">WikiWorldOrder.org/2016/11/26/coding-with-laravel-installing-homestead-on-a-mac/</a>.
 
-The instructions below include the needed steps to install SurvLoop, as well as the Open Police system.
+The instructions below include the needed steps to install SurvLoop, as well as the SurvLoop.org system.
 
 * Install Laravel's default user authentication, one required package, and SurvLoop:
 
@@ -49,7 +49,6 @@ $ nano composer.json
 ...
 "require": {
 	...
-    "wikiworldorder/survloop": "0.*",
     "wikiworldorder/survlooporg": "0.*",
 	...
 },
@@ -58,7 +57,6 @@ $ nano composer.json
 	...
 	"psr-4": {
 		...
-		"SurvLoop\\": "vendor/wikiworldorder/survloop/src/",
 		"SurvLoopOrg\\": "vendor/wikiworldorder/survlooporg/src/",
 	}
 	...
