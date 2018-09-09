@@ -56,7 +56,7 @@ class SurvLoopOrg extends SurvFormTree
     
     protected function postNodePublicCustom($nID = -3, $tmpSubTier = [])
     { 
-        if (sizeof($tmpSubTier) == 0) $tmpSubTier = $this->loadNodeSubTier($nID);
+        if (empty($tmpSubTier)) $tmpSubTier = $this->loadNodeSubTier($nID);
         list($tbl, $fld) = $this->allNodes[$nID]->getTblFld();
         if ($nID == 37) {
             

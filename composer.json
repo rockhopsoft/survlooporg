@@ -23,7 +23,7 @@
         }
     ],
     "require": {
-        "doctrine/dbal": "^2.5"
+        "wikiworldorder/survloop": "^0.0.0"
     },
     "autoload": {
         "psr-4": {
