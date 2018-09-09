@@ -22,7 +22,7 @@ SurvLoop is a Laravel-based engine for designing a database and creating a mobil
 
 * php: >=5.7.1
 * <a href="https://packagist.org/packages/laravel/framework" target="_blank">laravel/framework</a>: 5.6.*
-* <a href="https://packagist.org/packages/wikiworldorder/survloop" target="_blank">wikiworldorder/survloop</a>: v0.0.11
+* <a href="https://packagist.org/packages/wikiworldorder/survloop" target="_blank">wikiworldorder/survloop</a>: v0.0.12
 
 # <a name="getting-started"></a>Getting Started
 
