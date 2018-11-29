@@ -1,7 +1,7 @@
 
 # WikiWorldOrder/SurvLoopOrg
 
-[![Laravel](https://img.shields.io/badge/Laravel-5.6-orange.svg?style=flat-square)](http://laravel.com)
+[![Laravel](https://img.shields.io/badge/Laravel-5.7-orange.svg?style=flat-square)](http://laravel.com)
 [![SurvLoop](https://img.shields.io/badge/SurvLoop-0.0-orange.svg?style=flat-square)](https://github.com/wikiworldorder/survloop)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
@@ -20,23 +20,24 @@ SurvLoop is a Laravel-based engine for designing a database and creating a mobil
 
 # <a name="requirements"></a>Requirements
 
-* php: >=5.7.1
-* <a href="https://packagist.org/packages/laravel/framework" target="_blank">laravel/framework</a>: 5.6.*
-* <a href="https://packagist.org/packages/wikiworldorder/survloop" target="_blank">wikiworldorder/survloop</a>: v0.0.12
+* php: >=7.2.11
+* <a href="https://packagist.org/packages/laravel/framework" target="_blank">laravel/framework</a>: 5.7.*
+* <a href="https://packagist.org/packages/wikiworldorder/survloop" target="_blank">wikiworldorder/survloop</a>: 0.*
 
 # <a name="getting-started"></a>Getting Started
 
-Here are instructions if you are new to Laravel, or just want step-by-step instructions on how to install its 
-development environment, Homestead: 
-<a href="http://wikiworldorder.org/2016/11/26/coding-with-laravel-installing-homestead-on-a-mac/" 
-    target="_blank">WikiWorldOrder.org/2016/11/26/coding-with-laravel-installing-homestead-on-a-mac/</a>.
+The instructions below include the needed steps to install Laravel, SurvLoop, as well as the SurvLoop website.
+For more on creating environments to host Laravel, you can find more instructions on
+<a href="https://survloop.org/how-to-install-laravel-on-a-digital-ocean-server" target="_blank">SurvLoop.org</a>.
 
-The instructions below include the needed steps to install SurvLoop, as well as the SurvLoop.org system.
-
-* Install Laravel's default user authentication, one required package, and SurvLoop:
+* Use Composer to install Laravel with default user authentication, one required package:
 
 ```
+$ composer global require "laravel/installer"
+$ composer create-project laravel/laravel OpenPolice "5.7.*"
+$ cd OpenPolice
 $ php artisan make:auth
+$ php artisan vendor:publish --tag=laravel-notifications
 ```
 
 * Update `composer.json` to add requirements and an easier SurvLoop and KindLife reference:
@@ -114,6 +115,16 @@ $ php artisan db:seed --class=SurvLoopSeeder
 $ php artisan db:seed --class=SurvLoopOrgSeeder
 ```
 
+* For now, to apply database design changes to the same installation you are working in, depending on your server, 
+you might also need something like this...
+
+```
+$ chown -R www-data:33 app/Models
+$ chown -R www-data:33 database
+```
+
+* Browse to load the style sheets, etc.. /dashboard/css-reload
+
 * Log into admin dashboard...
 
 ```
@@ -126,10 +137,6 @@ password: SurvLoopOrg
 
 Once installed, documentation of this system's database design can be found at /dashboard/db/all . This system's user 
 experience design for data entry can be found at /dashboard/tree/map?all=1&alt=1 .
-
-
-Utility companies linked to zip codes collected from <a href="https://openei.org/datasets/dataset/u-s-electric-utility-companies-and-rates-look-up-by-zipcode-feb-2011/resource/3f00482e-8ea0-4b48-8243-a212b6322e74"
-target="_blank">OpenEI.org</a>.
 
 
 # <a name="roadmap"></a>Roadmap
