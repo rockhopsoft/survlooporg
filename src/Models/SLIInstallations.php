@@ -11,8 +11,9 @@ class SLIInstallations extends Model
     protected $fillable   = 
     [    
 		'InstName', 
-		'InstURL', 
 		'InstDesc', 
+		'InstURL', 
+		'InstLogoUrl',
 		'InstUserID', 
 		'InstIPaddy', 
 		'InstSubmissionProgress', 

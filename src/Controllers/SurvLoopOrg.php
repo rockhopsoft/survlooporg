@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\SLIInstallations;
+use App\Models\SLIInstallStats;
 
 use SurvLoopOrg\Controllers\SurvLoopOrgReport;
 
@@ -17,9 +19,6 @@ class SurvLoopOrg extends SurvFormTree
     
     public $classExtension         = 'SurvLoopOrg';
     public $treeID                 = 1;
-    
-    // Shortcuts...
-    public $farmTypes              = [];
     
     
     // Initializing a bunch of things which are not [yet] automatically determined by the software
@@ -36,12 +35,11 @@ class SurvLoopOrg extends SurvFormTree
         return true;
     }
     
-
     protected function customNodePrint($nID = -3, $tmpSubTier = [], $nIDtxt = '', $nSffx = '', $currVisib = 1)
     {
         $ret = '';
-        if ($nID == 37) {
-            
+        if ($nID == 77) {
+            $ret .= $this->gatherInstallStats($nID);
         }
         return $ret;
     }
@@ -88,6 +86,29 @@ class SurvLoopOrg extends SurvFormTree
             
         }
         return -1;
+    }
+    
+    protected function gatherInstallStats($nID)
+    {
+    	$insts = SLIInstallations::orderBy('created_at', 'asc')
+    		->get();
+        if ($insts->isNotEmpty()) {
+            foreach ($insts as $i) {
+                if (isset($i->InstURL) && trim($i->InstURL) != '' && $i->InstID > 1) {
+                    $jsonFile = $i->InstURL . '/survloop-stats.json';
+                    $jsonFile = 'https://survloop.org/survloop-stats.json';
+echo '<br /><br /><br />' . $jsonFile;
+                    if (file_exists($jsonFile)) {
+                        $json = json_decode(file_get_contents($jsonFile), TRUE);
+echo '<pre>'; print_r($json); echo '</pre>';
+                        if (sizeof($json) > 0) {
+                            
+                        }
+                    }
+                }
+            }
+    	}
+    	return view('vendor.survlooporg.nodes.77-gather-install-stats', $this->v)->render();
     }
     
 }
