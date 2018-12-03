@@ -10,22 +10,20 @@ use App\Models\User;
 use App\Models\SLIInstallations;
 use App\Models\SLIInstallStats;
 
-use SurvLoopOrg\Controllers\SurvLoopOrgReport;
-
+use SurvLoop\Controllers\CoreGlobals;
 use SurvLoop\Controllers\SurvFormTree;
+
+use SurvLoopOrg\Controllers\SurvLoopOrgReport;
 
 class SurvLoopOrg extends SurvFormTree
 {
     
-    public $classExtension         = 'SurvLoopOrg';
-    public $treeID                 = 1;
-    
+    public $classExtension = 'SurvLoopOrg';
+    public $treeID         = 1;
     
     // Initializing a bunch of things which are not [yet] automatically determined by the software
     protected function initExtra(Request $request)
     {
-        // Establishing Main Navigation Organization, with Node ID# and Section Titles
-        $this->majorSections = [];
         return true;
     }
     
@@ -39,7 +37,9 @@ class SurvLoopOrg extends SurvFormTree
     {
         $ret = '';
         if ($nID == 77) {
-            $ret .= $this->gatherInstallStats($nID);
+            $ret .= $this->gatherInstallStatTbl1($nID);
+        } elseif ($nID == 81) {
+            $ret .= $this->gatherInstallStatTbl2($nID);
         }
         return $ret;
     }
@@ -88,27 +88,64 @@ class SurvLoopOrg extends SurvFormTree
         return -1;
     }
     
-    protected function gatherInstallStats($nID)
+    protected function latestInstallStats()
     {
-    	$insts = SLIInstallations::orderBy('created_at', 'asc')
-    		->get();
-        if ($insts->isNotEmpty()) {
-            foreach ($insts as $i) {
-                if (isset($i->InstURL) && trim($i->InstURL) != '' && $i->InstID > 1) {
-                    $jsonFile = $i->InstURL . '/survloop-stats.json';
-                    $jsonFile = 'https://survloop.org/survloop-stats.json';
-echo '<br /><br /><br />' . $jsonFile;
-                    if (file_exists($jsonFile)) {
-                        $json = json_decode(file_get_contents($jsonFile), TRUE);
-echo '<pre>'; print_r($json); echo '</pre>';
-                        if (sizeof($json) > 0) {
-                            
+        return DB::table('SLI_InstallStats')
+            ->join('SLI_Installations', 'SLI_InstallStats.InstStatInstallID', '=', 'SLI_Installations.InstID')
+            ->where('SLI_InstallStats.InstStatDate', '=', date("Y-m-d"))
+            ->orderBy('SLI_InstallStats.InstStatInstallID', 'asc')
+            ->select('SLI_Installations.*', 'SLI_InstallStats.*')
+            ->get();
+    }
+    
+    protected function gatherInstallStatTbl1($nID)
+    {
+        $this->v["latest"] = $this->latestInstallStats();
+        if ($this->v["latest"]->isEmpty() || $GLOBALS["SL"]->REQ->has('refresh')) {
+            $insts = SLIInstallations::orderBy('created_at', 'asc')
+                ->get();
+            if ($insts->isNotEmpty()) {
+                foreach ($insts as $i) {
+                    if (isset($i->InstURL) && trim($i->InstURL) != '') {
+                        $stats = [];
+                        if ($i->InstID == 1) {
+                            $dbOg = [$this->dbID, $this->treeID];
+                            $GLOBALS["SL"] = new CoreGlobals($GLOBALS["SL"]->REQ, 3, 3, 3);
+                            $stats = $GLOBALS["SL"]->getJsonSurvLoopStats('wikiworldorder/survloop');
+                            $GLOBALS["SL"] = new CoreGlobals($GLOBALS["SL"]->REQ, $dbOg[0], $dbOg[1], $dbOg[1]);
+                        } else { // if ($i->InstID != 3) {
+                            $jsonFile = $i->InstURL . '/survloop-stats.json';
+                            $stats = json_decode(file_get_contents($jsonFile), TRUE);
                         }
+                        if (sizeof($stats) > 0) {
+                            $stat = SLIInstallStats::where('InstStatInstallID', $i->InstID)
+                                ->where('InstStatDate', date("Y-m-d"))
+                                ->first();
+                            if (!$stat) {
+                                $stat = new SLIInstallStats;
+                                $stat->InstStatInstallID = $i->InstID;
+                            }
+                            foreach ($stats as $fld => $val) {
+                                if ($fld == 'IconUrl') {
+                                    $i->{ 'Inst' . $fld } = $val;
+                                } else {
+                                    $stat->{ 'InstStat' . $fld } = $val;
+                                }
+                            }
+                            $stat->save();
+                        }
+                        $i->save();
                     }
                 }
             }
-    	}
+            $this->v["latest"] = $this->latestInstallStats();
+        }
     	return view('vendor.survlooporg.nodes.77-gather-install-stats', $this->v)->render();
+    }
+    
+    protected function gatherInstallStatTbl2($nID)
+    {
+    	return view('vendor.survlooporg.nodes.81-gather-install-stats-table2', $this->v)->render();
     }
     
 }

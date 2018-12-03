@@ -12,10 +12,9 @@ class SLIInstallStats extends Model
     [    
 		'InstStatInstallID', 
 		'InstStatDate', 
-		'InstStatCodeLinesControllers', 
-		'InstStatCodeLinesViews', 
 		'InstStatDbTables', 
 		'InstStatDbFields', 
+		'InstStatDbLinks', 
 		'InstStatSurveys', 
 		'InstStatSurveyNodes', 
 		'InstStatSurveyNodesMult',
@@ -23,6 +22,14 @@ class SLIInstallStats extends Model
 		'InstStatSurveyNodesNumb',
 		'InstStatPages', 
 		'InstStatPageNodes', 
+		'InstStatUsers', 
+		'InstStatSurvey1Complete', 
+		'InstStatCodeLinesControllers', 
+		'InstStatCodeLinesViews', 
+		'InstStatBytesControllers',
+		'InstStatBytesDatabase',
+		'InstStatBytesUploads',
+		'InstStatBytesViews',
     ];
     
     // END SurvLoop auto-generated portion of Model
