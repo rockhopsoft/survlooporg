@@ -5,22 +5,14 @@ use DB;
 use Auth;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-
 use App\Models\User;
 use App\Models\SLIInstallations;
 use App\Models\SLIInstallStats;
-
 use SurvLoop\Controllers\CoreGlobals;
-use SurvLoop\Controllers\SurvFormTree;
+use SurvLoop\Controllers\TreeSurvForm;
 
-use SurvLoopOrg\Controllers\SurvLoopOrgReport;
-
-class SurvLoopOrg extends SurvFormTree
+class SurvLoopOrg extends TreeSurvForm
 {
-    
-    public $classExtension = 'SurvLoopOrg';
-    public $treeID         = 1;
-    
     // Initializing a bunch of things which are not [yet] automatically determined by the software
     protected function initExtra(Request $request)
     {
@@ -71,7 +63,7 @@ class SurvLoopOrg extends SurvFormTree
     }
     
     // returns an array of overrides for ($currNodeSessionData, ???... 
-    protected function printNodeSessDataOverride($nID = -3, $tmpSubTier = [], $currNodeSessionData = '')
+    protected function printNodeSessDataOverride($nID = -3, $tmpSubTier = [], $nIDtxt = '', $currNodeSessionData = '')
     {
         if (sizeof($this->sessData->dataSets) == 0) return [];
         if ($nID == 37) {

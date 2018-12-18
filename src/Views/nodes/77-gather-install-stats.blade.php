@@ -2,8 +2,8 @@
 <table class="table table-striped instStatRow" border=0 >
 <tr>
     <th class="vaB"><b>Installations</b></th>
-    <td class="vaB brdLft">Users</td>
-    <td class="vaB">Primary Survey Completions</td>
+    <td class="vaB brdLft">Primary Survey Completions</td>
+    <td class="vaB">Users</td>
     <td class="vaB brdLft">Data Tables</td>
     <td class="vaB">Table Linkages</td>
     <td class="vaB">Data Fields</td>
@@ -20,8 +20,8 @@
         <th><nobr><a href="{{ $inst->InstURL }}" target="_blank"><div class="ico32">
             @if (isset($inst->InstIconUrl)) <img src="{{ $inst->InstIconUrl }}" border=0 > @endif </div>
             <b>{{ $inst->InstName }}</b></a></nobr></th>
-        <td class="brdLft">{{ number_format($inst->InstStatUsers) }}</td>
-        <td>{{ number_format($inst->InstStatSurvey1Complete) }}</td>
+        <td class="brdLft">{{ number_format($inst->InstStatSurvey1Complete) }}</td>
+        <td>{{ number_format($inst->InstStatUsers) }}</td>
         <td class="brdLft">{{ number_format($inst->InstStatDbTables) }}</td>
         <td>{{ number_format($inst->InstStatDbLinks) }}</td>
         <td>{{ number_format($inst->InstStatDbFields) }}</td>

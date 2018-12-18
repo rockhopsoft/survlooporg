@@ -4,11 +4,9 @@ namespace SurvLoopOrg\Controllers;
 use DB;
 use Auth;
 use Illuminate\Http\Request;
-
 use App\Models\User;
 use App\Models\SLDefinitions;
-
-use SurvLoopOrg\Controllers\SurvLoopOrgReport;
+use SurvLoopOrg\Controllers\SurvLoopOrg;
 use SurvLoop\Controllers\AdminSubsController;
 
 class SurvLoopOrgAdmin extends AdminSubsController
@@ -26,7 +24,7 @@ class SurvLoopOrgAdmin extends AdminSubsController
     
     protected function initExtra(Request $request)
     {
-        $this->CustReport = new SurvLoopOrgReport($request);
+        $this->custReport = new SurvLoopOrg($request);
         
         if (!isset($this->v["currPage"])) $this->v["currPage"] = ['/dashboard', ''];
         if (trim($this->v["currPage"][0]) == '') $this->v["currPage"][0] = '/dashboard';
