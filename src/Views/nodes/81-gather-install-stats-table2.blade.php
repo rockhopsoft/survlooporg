@@ -32,6 +32,10 @@
 @endforelse
 </table>
 
+<p>&nbsp;</p>
+<h1 class="mB0">Total Install Stats Over Time</h1>
+<div id="chartComplexity"></div>
+
 <style>
 table.instStatRow tr td, table.instStatRow tr th { padding: 10px; }
 table.instStatRow tr td { text-align: right; }

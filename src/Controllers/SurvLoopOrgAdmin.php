@@ -1,4 +1,12 @@
 <?php
+/**
+  * SurvLoopOrgAdmin extends the SurvLoop admin umbrella.
+  *
+  * SurvLoop.org
+  * @package  wikiworldorder/survlooporg
+  * @author  Morgan Lesko <wikiworldorder@protonmail.com>
+  * @since 0.0
+  */
 namespace SurvLoopOrg\Controllers;
 
 use DB;
