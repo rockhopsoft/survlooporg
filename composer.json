@@ -22,8 +22,14 @@
             "role": "Developer"
         }
     ],
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/wikiworldorder/survloop"
+      }
+    ],
     "require": {
-        "wikiworldorder/survloop": "0.*"
+        "wikiworldorder/survloop": "dev-master"
     },
     "autoload": {
         "psr-4": {
