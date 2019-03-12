@@ -16,8 +16,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\SLIInstallations;
 use App\Models\SLIInstallStats;
-use SurvLoop\Controllers\CoreGlobals;
-use SurvLoop\Controllers\TreeSurvForm;
+use SurvLoop\Controllers\Globals\Globals;
+use SurvLoop\Controllers\Tree\TreeSurvForm;
 
 class SurvLoopOrg extends TreeSurvForm
 {
@@ -223,7 +223,7 @@ class SurvLoopOrg extends TreeSurvForm
     public function engineJsonSurvStats(Request $request)
     {
         header('Content-Type: application/json');
-        $GLOBALS["SL"] = new CoreGlobals($request, 3, 3, 3);
+        $GLOBALS["SL"] = new Globals($request, 3, 3, 3);
         $stats = $GLOBALS["SL"]->getJsonSurvLoopStats('wikiworldorder/survloop');
     	echo json_encode($stats);
         exit;
