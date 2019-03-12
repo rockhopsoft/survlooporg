@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\SLDefinitions;
 use SurvLoopOrg\Controllers\SurvLoopOrg;
-use SurvLoop\Controllers\AdminSubsController;
+use SurvLoop\Controllers\Admin\AdminSubsController;
 
 class SurvLoopOrgAdmin extends AdminSubsController
 {
