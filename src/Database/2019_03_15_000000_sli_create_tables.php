@@ -34,8 +34,6 @@ class SLICreateTables extends Migration
 			$table->increments('InstStatID');
 			$table->integer('InstStatInstallID')->unsigned()->nullable();
 			$table->date('InstStatDate')->nullable();
-			$table->integer('InstStatCodeLinesControllers')->nullable();
-			$table->integer('InstStatCodeLinesViews')->nullable();
 			$table->integer('InstStatDbTables')->nullable();
 			$table->integer('InstStatDbFields')->nullable();
 			$table->integer('InstStatSurveys')->nullable();
@@ -47,6 +45,12 @@ class SLICreateTables extends Migration
 			$table->integer('InstStatPageNodes')->nullable();
 			$table->integer('InstStatUsers')->nullable();
 			$table->integer('InstStatSurvey1Complete')->nullable();
+			$table->integer('InstStatCodeLinesControllers')->nullable();
+			$table->integer('InstStatCodeLinesViews')->nullable();
+			$table->integer('InstStatBytesControllers')->nullable();
+			$table->integer('InstStatBytesDatabase')->nullable();
+			$table->integer('InstStatBytesViews')->nullable();
+			$table->integer('InstStatBytesUploads')->nullable();
 			$table->timestamps();
 		});
 	
