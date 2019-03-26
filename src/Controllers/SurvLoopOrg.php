@@ -42,6 +42,28 @@ class SurvLoopOrg extends TreeSurvForm
             $ret .= $this->gatherInstallStatTbl1($nID);
         } elseif ($nID == 81) {
             $ret .= $this->gatherInstallStatTbl2($nID);
+        } elseif (in_array($nID, [641, 2386, 441, 759, 999, 1081, 2281])) {
+            $docuNav = [
+                [
+                    'How To Install Survloop', 
+                    [
+                        //['/how-to-setup-an-ubuntu-server-on-digital-ocean', 'Setup Ubuntu Server on <nobr>Digital Ocean</nobr>'],
+                        ['/how-to-install-laravel-on-an-ubuntu-server', 'Install Laravel on Ubuntu Server'],
+                        ['/how-to-install-laravel-locally-on-a-mac', 'Install Laravel locally <nobr>on a Mac</nobr>'],
+                        ['/how-to-install-survloop', 'Install SurvLoop on top of Laravel']
+                    ]
+                ],
+                [
+                    'SurvLoop Code Base Orientation',
+                    [
+                        ['/package-files-folders-classes', 'Package Files, Folders, and Classes']
+                    ]
+                ]
+            ];
+            return view('vendor.survlooporg.inc-documentation-navigation', [
+                "docuNav"  => $docuNav,
+                "currPage" => $this->getCurrPage()
+            ])->render();
         }
         return $ret;
     }

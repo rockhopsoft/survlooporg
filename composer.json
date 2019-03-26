@@ -27,8 +27,8 @@
     },
     "autoload": {
         "psr-4": {
-            "SurvLoopOrg\\": "src/"
-            "SurvLoopOrg\\Models\\": "storage/app/models/survlooporg",
+            "SurvLoopOrg\\": "src/",
+            "SurvLoopOrg\\Models\\": "storage/app/models/survlooporg"
         }
     }
 }
