@@ -13,8 +13,8 @@ class SurvLoopOrgServiceProvider extends ServiceProvider
               __DIR__.'/Models'  => base_path('app/Models'),
               __DIR__.'/Models'  => base_path('app/Models/SurvLoopOrg'),
               __DIR__.'/Uploads' => base_path('storage/app/up/survlooporg'),
-              __DIR__.'/Database/2018_11_30_000000_sli_create_tables.php'
-                  => base_path('database/migrations/2018_11_30_000000_sli_create_tables.php'),
+              __DIR__.'/Database/2019_03_15_000000_sli_create_tables.php'
+                  => base_path('database/migrations/2019_03_15_000000_sli_create_tables.php'),
               __DIR__.'/Database/SurvLoopOrgSeeder.php' => base_path('database/seeds/SurvLoopOrgSeeder.php')
         ]);
     }
