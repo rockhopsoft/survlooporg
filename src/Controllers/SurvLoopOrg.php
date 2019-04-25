@@ -42,7 +42,7 @@ class SurvLoopOrg extends TreeSurvForm
             $ret .= $this->gatherInstallStatTbl1($nID);
         } elseif ($nID == 81) {
             $ret .= $this->gatherInstallStatTbl2($nID);
-        } elseif (in_array($nID, [641, 2386, 441, 759, 999, 1081, 2281])) {
+        } elseif (in_array($nID, [641, 2386, 441, 759, 999, 1081, 2281, 2681])) {
             $docuNav = [
                 [
                     'How To Install Survloop', 
@@ -54,9 +54,10 @@ class SurvLoopOrg extends TreeSurvForm
                     ]
                 ],
                 [
-                    'SurvLoop Code Base Orientation',
+                    'SurvLoop Codebase Orientation',
                     [
-                        ['/package-files-folders-classes', 'Package Files, Folders, and Classes']
+                        ['/package-files-folders-classes', 'Package Files, Folders, and Classes'],
+                        ['/developer-work-flows', 'Developer Work Flows']
                     ]
                 ]
             ];
