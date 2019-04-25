@@ -85,95 +85,29 @@ And continue the install...
 # php artisan optimize
 # composer dump-autoload
 # php artisan db:seed --class=SurvLoopSeeder
+# php artisan db:seed --class=SurvLoopOrgSeeder
 ```
 And if all has gone well, you'll be asked to create a master admin user account when you browse to <a href="http://localhost/" target="_blank">http://localhost/</a>. If it loads, but looks janky (without CSS), reload the page once... and hopefully it looks like a fresh install.
 
 
 ## Install a copy of SurvLoop.org without Laradock
 
-The instructions below include the needed steps to install Laravel, SurvLoop, as well as the SurvLoop website.
-For more on creating environments to host Laravel, you can find more instructions on
-<a href="https://survloop.org/how-to-install-laravel-on-a-digital-ocean-server" target="_blank">SurvLoop.org</a>.
-
 * Use Composer to install Laravel with default user authentication, one required package:
 
 ```
 $ composer global require "laravel/installer"
-$ composer create-project laravel/laravel OpenPolice "5.7.*"
-$ cd OpenPolice
+$ composer create-project laravel/laravel survlooporg "5.8.*"
+$ cd survlooporg
+$ php artisan key:generate
 $ php artisan make:auth
-$ php artisan vendor:publish --tag=laravel-notifications
-```
-
-* Update `composer.json` to add requirements and an easier SurvLoop and KindLife reference:
-
-```
-$ nano composer.json
-```
-
-```
-...
-"require": {
-	...
-    "wikiworldorder/survlooporg": "0.*",
-	...
-},
-...
-"autoload": {
-	...
-	"psr-4": {
-		...
-		"SurvLoopOrg\\": "vendor/wikiworldorder/survlooporg/src/",
-	}
-	...
-},
-...
-```
-
-```
-$ composer update
-```
-
-* Add the package to your application service providers in `config/app.php`.
-
-```
-$ nano config/app.php
-```
-
-```php
-...
-'providers' => [
-	...
-	SurvLoop\SurvLoopServiceProvider::class,
-	SurvLoopOrg\SurvLoopOrgServiceProvider::class,
-	...
-],
-...
-'aliases' => [
-	...
-	'SurvLoop'	 => 'WikiWorldOrder\SurvLoop\SurvLoopFacade',
-	'SurvLoopOrg'	 => 'WikiWorldOrder\SurvLoop\SurvLoopOrgFacade',
-	...
-],
-...
-```
-
-* Swap out the SurvLoop user model in `config/auth.php`.
-
-```
-$ nano config/auth.php
-```
-
-```php
-...
-'model' => App\Models\User::class,
-...
+$ composer require wikiworldorder/survlooporg
+$ sed -i 's/App\\User::class/App\\Models\\User::class/g' config/auth.php
 ```
 
 * Update composer, publish the package migrations, etc...
 
 ```
-$ php artisan vendor:publish --force
+$ echo "0" | php artisan vendor:publish --force
 $ php artisan migrate
 $ composer dump-autoload
 $ php artisan db:seed --class=SurvLoopSeeder
@@ -188,20 +122,15 @@ $ chown -R www-data:33 app/Models
 $ chown -R www-data:33 database
 ```
 
-* Browse to load the style sheets, etc.. /dashboard/css-reload
-
-* Log into admin dashboard...
-
-```
-user: open@survloop.org
-password: SurvLoopOrg
-```
+* Load in the browser to create super admin account and get started.
 
 
 # <a name="documentation"></a>Documentation
 
 Once installed, documentation of this system's database design can be found at /dashboard/db/all . This system's user 
 experience design for data entry can be found at /dashboard/tree/map?all=1&alt=1 .
+
+More can be found at <a href="https://survloop.org/package-files-folders-classes" target="_blank">https://survloop.org/package-files-folders-classes</a>.
 
 
 # <a name="roadmap"></a>Roadmap
