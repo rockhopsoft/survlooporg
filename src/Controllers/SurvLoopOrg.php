@@ -45,9 +45,8 @@ class SurvLoopOrg extends TreeSurvForm
         } elseif (in_array($nID, [641, 2386, 441, 759, 999, 1081, 1793, 2281, 2681])) {
             $docuNav = [
                 [
-                    'How To Install Survloop', 
+                    'How To Install Survloop...', 
                     [
-                        //['/how-to-setup-an-ubuntu-server-on-digital-ocean', 'Setup Ubuntu Server on <nobr>Digital Ocean</nobr>'],
                         ['/how-to-install-survloop-with-docker', 'How To Install SurvLoop with Docker'],
                         ['/how-to-install-survloop', 'Install SurvLoop on top of Laravel'],
                         ['/how-to-install-laravel-on-an-ubuntu-server', 'Install Laravel on Ubuntu Server'],
@@ -55,7 +54,7 @@ class SurvLoopOrg extends TreeSurvForm
                     ]
                 ],
                 [
-                    'SurvLoop Codebase Orientation',
+                    'SurvLoop Codebase Orientation...',
                     [
                         ['/package-files-folders-classes', 'Package Files, Folders, and Classes'],
                         ['/developer-work-flows', 'Developer Work Flows']
