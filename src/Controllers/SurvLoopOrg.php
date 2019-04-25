@@ -48,9 +48,10 @@ class SurvLoopOrg extends TreeSurvForm
                     'How To Install Survloop', 
                     [
                         //['/how-to-setup-an-ubuntu-server-on-digital-ocean', 'Setup Ubuntu Server on <nobr>Digital Ocean</nobr>'],
+                        ['/how-to-install-survloop-with-docker', 'How To Install SurvLoop with Docker'],
+                        ['/how-to-install-survloop', 'Install SurvLoop on top of Laravel'],
                         ['/how-to-install-laravel-on-an-ubuntu-server', 'Install Laravel on Ubuntu Server'],
-                        ['/how-to-install-laravel-locally-on-a-mac', 'Install Laravel locally <nobr>on a Mac</nobr>'],
-                        ['/how-to-install-survloop', 'Install SurvLoop on top of Laravel']
+                        ['/how-to-install-laravel-locally-on-a-mac', 'Install Laravel locally <nobr>on a Mac</nobr>']
                     ]
                 ],
                 [
