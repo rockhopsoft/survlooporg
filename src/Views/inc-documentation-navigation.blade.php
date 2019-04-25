@@ -2,8 +2,6 @@
 
 <h4><a href="/documentation" class="slBlueDark">Documentation Overview</a></h4>
 
-<a href="https://github.com/wikiworldorder/survloop" target="_blank" class="btn btn-primary btn-block taL mB20"><div class="row"><div class="col-2 fPerc300 pT5 pL20"><i class="fa fa-github" aria-hidden="true"></i></div><div class="col-10 taL pT5">github.com/<br>wikiworldorder/survloop</div></div></a>
-
 @forelse ($docuNav as $i => $category)
     <div class="p10"><b>{{ $category[0] }}</b></div>
     @forelse ($category[1] as $j => $nav)
@@ -13,3 +11,5 @@
     @endforelse
 @empty
 @endforelse
+
+<p><a href="https://github.com/wikiworldorder/survloop" target="_blank" class="btn btn-primary btn-lg btn-block taL mB20"><i class="fa fa-github mR5" aria-hidden="true"></i> wikiworldorder/survloop</a></p>

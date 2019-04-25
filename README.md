@@ -77,10 +77,10 @@ And continue the install...
 # php artisan key:generate
 # php artisan make:auth
 # composer require wikiworldorder/survlooporg
+# echo "0" | php artisan vendor:publish --force
 # composer dump-autoload
 # php artisan optimize
 # sed -i 's/App\\User::class/App\\Models\\User::class/g' config/auth.php
-# echo "0" | php artisan vendor:publish --force
 # php artisan migrate
 # php artisan optimize
 # composer dump-autoload
