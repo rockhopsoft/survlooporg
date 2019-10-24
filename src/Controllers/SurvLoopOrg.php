@@ -43,28 +43,7 @@ class SurvLoopOrg extends TreeSurvForm
         } elseif ($nID == 81) {
             $ret .= $this->gatherInstallStatTbl2($nID);
         } elseif (in_array($nID, [641, 2386, 441, 759, 999, 1081, 1793, 2281, 2681])) {
-            $docuNav = [
-                [
-                    'How To Install Survloop...', 
-                    [
-                        ['/how-to-install-survloop-with-docker', 'How To Install SurvLoop with Docker'],
-                        ['/how-to-install-survloop', 'Install SurvLoop on top of Laravel'],
-                        ['/how-to-install-laravel-on-an-ubuntu-server', 'Install Laravel on Ubuntu Server'],
-                        ['/how-to-install-laravel-locally-on-a-mac', 'Install Laravel locally <nobr>on a Mac</nobr>']
-                    ]
-                ],
-                [
-                    'SurvLoop Codebase Orientation...',
-                    [
-                        ['/package-files-folders-classes', 'Package Files, Folders, and Classes'],
-                        ['/developer-work-flows', 'Developer Work Flows']
-                    ]
-                ]
-            ];
-            return view('vendor.survlooporg.inc-documentation-navigation', [
-                "docuNav"  => $docuNav,
-                "currPage" => $this->getCurrPage()
-            ])->render();
+            $ret .= $this->printDocumentationNav($nID);
         }
         return $ret;
     }
@@ -77,9 +56,11 @@ class SurvLoopOrg extends TreeSurvForm
         return $curr;
     }
     
-    protected function postNodePublicCustom($nID = -3, $tmpSubTier = [])
+    protected function postNodePublicCustom($nID = -3, $nIDtxt = '', $tmpSubTier = [])
     { 
-        if (empty($tmpSubTier)) $tmpSubTier = $this->loadNodeSubTier($nID);
+        if (empty($tmpSubTier)) {
+            $tmpSubTier = $this->loadNodeSubTier($nID);
+        }
         list($tbl, $fld) = $this->allNodes[$nID]->getTblFld();
         if ($nID == 37) {
             
@@ -201,7 +182,7 @@ class SurvLoopOrg extends TreeSurvForm
                         "SurveyNodesMult" => 0,
                         "SurveyNodesOpen" => 0,
                         "SurveyNodes"     => 0
-                        ];
+                    ];
                 }
                 foreach ($dailyTots[$stat->InstStatDate] as $fld => $cnt) {
                     if (isset($stat->{ 'InstStat' . $fld })) {
@@ -250,6 +231,47 @@ class SurvLoopOrg extends TreeSurvForm
         $stats = $GLOBALS["SL"]->getJsonSurvLoopStats('wikiworldorder/survloop');
     	echo json_encode($stats);
         exit;
+    }
+    
+    protected function printDocumentationNav($nID)
+    {
+        $docuNav = [
+            [
+                'How To Install Survloop...', 
+                [
+                    [
+                        '/how-to-install-survloop-with-docker', 
+                        'How To Install SurvLoop with Docker'
+                    ], [
+                        '/how-to-install-survloop', 
+                        'Install SurvLoop on top of Laravel'
+                    ], [
+                        '/how-to-install-laravel-on-an-ubuntu-server', 
+                        'Install Laravel on Ubuntu Server'
+                    ], [
+                        '/how-to-install-laravel-locally-on-a-mac', 
+                        'Install Laravel locally <nobr>on a Mac</nobr>'
+                    ]
+                ]
+            ],
+            [
+                'SurvLoop Codebase Orientation...',
+                [
+                    [
+                        '/package-files-folders-classes', 
+                        'Package Files, Folders, and Classes'
+                    ],
+                    [
+                        '/developer-work-flows', 
+                        'Developer Work Flows'
+                    ]
+                ]
+            ]
+        ];
+        return view('vendor.survlooporg.inc-documentation-navigation', [
+            "docuNav"  => $docuNav,
+            "currPage" => $this->getCurrPage()
+        ])->render();
     }
     
 }
