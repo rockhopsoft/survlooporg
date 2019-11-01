@@ -99,7 +99,8 @@ class SurvLoopOrg extends TreeSurvForm
     protected function latestInstallStats()
     {
         return DB::table('SLI_InstallStats')
-            ->join('SLI_Installations', 'SLI_InstallStats.InstStatInstallID', '=', 'SLI_Installations.InstID')
+            ->join('SLI_Installations', 'SLI_InstallStats.InstStatInstallID', 
+                '=', 'SLI_Installations.InstID')
             ->where('SLI_InstallStats.InstStatDate', '=', date("Y-m-d"))
             ->orderBy('SLI_InstallStats.InstStatInstallID', 'asc')
             ->select('SLI_Installations.*', 'SLI_InstallStats.*')
@@ -120,7 +121,8 @@ class SurvLoopOrg extends TreeSurvForm
                             $url = 'https://survloop.org/survloop-engine-stats.json';
                             //$stats = json_decode(file_get_contents($url), TRUE);
                         } else {
-                            $stats = json_decode(file_get_contents($i->InstURL . '/survloop-stats.json'), TRUE);
+                            $file = $i->InstURL . '/survloop-stats.json';
+                            $stats = json_decode(file_get_contents($file), TRUE);
                         }
                         if (sizeof($stats) > 0) {
                             $stat = SLIInstallStats::where('InstStatInstallID', $i->InstID)
@@ -237,14 +239,11 @@ class SurvLoopOrg extends TreeSurvForm
     {
         $docuNav = [
             [
-                'How To Install Survloop...', 
+                'How To Install Survloop', 
                 [
                     [
-                        '/how-to-install-survloop-with-docker', 
-                        'How To Install SurvLoop with Docker'
-                    ], [
                         '/how-to-install-survloop', 
-                        'Install SurvLoop on top of Laravel'
+                        'Install SurvLoop'
                     ], [
                         '/how-to-install-laravel-on-an-ubuntu-server', 
                         'Install Laravel on Ubuntu Server'
@@ -255,7 +254,7 @@ class SurvLoopOrg extends TreeSurvForm
                 ]
             ],
             [
-                'SurvLoop Codebase Orientation...',
+                'SurvLoop Codebase Orientation',
                 [
                     [
                         '/package-files-folders-classes', 
