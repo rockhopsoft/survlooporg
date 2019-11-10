@@ -1,7 +1,7 @@
 
 # WikiWorldOrder/SurvLoopOrg
 
-[![Laravel](https://img.shields.io/badge/Laravel-5.7-orange.svg?style=flat-square)](http://laravel.com)
+[![Laravel](https://img.shields.io/badge/Laravel-5.8-orange.svg?style=flat-square)](http://laravel.com)
 [![SurvLoop](https://img.shields.io/badge/SurvLoop-0.0-orange.svg?style=flat-square)](https://github.com/wikiworldorder/survloop)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
@@ -21,8 +21,8 @@ SurvLoop is a Laravel-based engine for designing a database and creating a mobil
 # <a name="requirements"></a>Requirements
 
 * php: >=7.2.11
-* <a href="https://packagist.org/packages/laravel/framework" target="_blank">laravel/framework</a>: 5.7.*
-* <a href="https://packagist.org/packages/wikiworldorder/survloop" target="_blank">wikiworldorder/survloop</a>: 0.*
+* <a href="https://packagist.org/packages/laravel/framework" target="_blank">laravel/framework</a>: 5.8.*
+* <a href="https://packagist.org/packages/wikiworldorder/survloop" target="_blank">wikiworldorder/survloop</a>: 0.2.*
 
 # <a name="getting-started"></a>Getting Started
 
