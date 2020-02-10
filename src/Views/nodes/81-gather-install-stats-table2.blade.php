@@ -16,17 +16,17 @@
 </tr>
 @forelse ($latest as $i => $inst)
     <tr @if ($i%2 > 0) class="row2" @endif >
-        <th><nobr><a href="{{ $inst->InstURL }}" target="_blank"><div class="ico32">
-            @if (isset($inst->InstIconUrl)) <img src="{{ $inst->InstIconUrl }}" border=0 > @endif </div>
-            <b>{{ $inst->InstName }}</b></a></nobr></th>
-        <th> @if (isset($inst->InstOnGitHub)) <a href="{{ $inst->InstOnGitHub }}" target="_blank"
+        <th><nobr><a href="{{ $inst->inst_url }}" target="_blank"><div class="ico32">
+            @if (isset($inst->inst_icon_url)) <img src="{{ $inst->inst_icon_url }}" border=0 > @endif </div>
+            <b>{{ $inst->inst_name }}</b></a></nobr></th>
+        <th> @if (isset($inst->inst_on_github)) <a href="{{ $inst->inst_on_github }}" target="_blank"
             ><i class="fa fa-github f16" aria-hidden="true"></i></a> @endif </th>
-        <td class="brdLft">{{ number_format($inst->InstStatCodeLinesControllers) }}</td>
-        <td>{{ number_format($inst->InstStatCodeLinesViews) }}</td>
-        <td class="brdLft">{{ $GLOBALS["SL"]->humanFilesize($inst->InstStatBytesControllers, 1) }}</td>
-        <td>{{ $GLOBALS["SL"]->humanFilesize($inst->InstStatBytesDatabase, 1) }}</td>
-        <td>{{ $GLOBALS["SL"]->humanFilesize($inst->InstStatBytesUploads, 1) }}</td>
-        <td>{{ $GLOBALS["SL"]->humanFilesize($inst->InstStatBytesViews, 1) }}</td>
+        <td class="brdLft">{{ number_format($inst->inst_stat_code_lines_controllers) }}</td>
+        <td>{{ number_format($inst->inst_stat_code_lines_views) }}</td>
+        <td class="brdLft">{{ $GLOBALS["SL"]->humanFilesize($inst->inst_stat_bytes_controllers, 1) }}</td>
+        <td>{{ $GLOBALS["SL"]->humanFilesize($inst->inst_stat_bytes_database, 1) }}</td>
+        <td>{{ $GLOBALS["SL"]->humanFilesize($inst->inst_stat_bytes_uploads, 1) }}</td>
+        <td>{{ $GLOBALS["SL"]->humanFilesize($inst->inst_stat_bytes_views, 1) }}</td>
     </tr>
 @empty
 @endforelse

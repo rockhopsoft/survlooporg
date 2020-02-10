@@ -5,22 +5,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class SLIRequests extends Model
 {
-    protected $table      = 'SLI_Requests';
-    protected $primaryKey = 'ReqID';
+    protected $table      = 'sli_requests';
+    protected $primaryKey = 'req_id';
     public $timestamps    = true;
     protected $fillable   = 
     [    
-		'ReqTitle', 
-		'ReqDescription', 
-		'ReqIsCoder', 
-		'ReqEmail', 
-		'ReqIsMobile', 
-		'ReqUserID', 
-		'ReqSubmissionProgress', 
-		'ReqUniqueStr', 
-		'ReqTreeVersion', 
-		'ReqVersionAB', 
-		'ReqIPaddy', 
+		'req_title', 
+		'req_description', 
+		'req_is_coder', 
+		'req_email', 
+		'req_is_mobile', 
+		'req_user_id', 
+		'req_submission_progress', 
+		'req_unique_str', 
+		'req_tree_version', 
+		'req_version_ab', 
+		'req_ip_addy', 
     ];
     
     // END SurvLoop auto-generated portion of Model

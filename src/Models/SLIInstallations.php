@@ -5,24 +5,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class SLIInstallations extends Model
 {
-    protected $table      = 'SLI_Installations';
-    protected $primaryKey = 'InstID';
+    protected $table      = 'sli_installations';
+    protected $primaryKey = 'inst_id';
     public $timestamps    = true;
     protected $fillable   = 
     [    
-		'InstName', 
-		'InstDesc', 
-		'InstURL', 
-		'InstOnGitHub', 
-		'InstLogoUrl',
-		'InstIconUrl',
-		'InstUserID', 
-		'InstIPaddy', 
-		'InstSubmissionProgress', 
-		'InstVersionAB', 
-		'InstTreeVersion', 
-		'InstUniqueStr', 
-		'InstIsMobile', 
+		'inst_name', 
+		'inst_desc', 
+		'inst_url', 
+		'inst_on_github', 
+		'inst_logo_url',
+		'inst_icon_url',
+		'inst_user_id', 
+		'inst_ip_addy', 
+		'inst_submission_progress', 
+		'inst_version_ab', 
+		'inst_tree_version', 
+		'inst_unique_str', 
+		'inst_is_mobile', 
     ];
     
     // END SurvLoop auto-generated portion of Model

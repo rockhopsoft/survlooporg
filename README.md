@@ -1,11 +1,11 @@
 
-# WikiWorldOrder/SurvLoopOrg
+# RockHopSoft/SurvLoopOrg
 
 [![Laravel](https://img.shields.io/badge/Laravel-5.8-orange.svg?style=flat-square)](http://laravel.com)
-[![SurvLoop](https://img.shields.io/badge/SurvLoop-0.0-orange.svg?style=flat-square)](https://github.com/wikiworldorder/survloop)
+[![SurvLoop](https://img.shields.io/badge/SurvLoop-0.0-orange.svg?style=flat-square)](https://github.com/rockhopsoft/survloop)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
-<a href="https://github.com/wikiworldorder/survloop" target="_blank">SurvLoop</a>, atop 
+<a href="https://github.com/rockhopsoft/survloop" target="_blank">SurvLoop</a>, atop 
 <a href="https://laravel.com/" target="_blank">Laravel</a>. 
 SurvLoop is a Laravel-based engine for designing a database and creating a mobile-friendly user interface to fill it. 
 
@@ -22,7 +22,7 @@ SurvLoop is a Laravel-based engine for designing a database and creating a mobil
 
 * php: >=7.2.11
 * <a href="https://packagist.org/packages/laravel/framework" target="_blank">laravel/framework</a>: 5.8.*
-* <a href="https://packagist.org/packages/wikiworldorder/survloop" target="_blank">wikiworldorder/survloop</a>: 0.2.*
+* <a href="https://packagist.org/packages/rockhopsoft/survloop" target="_blank">rockhopsoft/survloop</a>: 0.2.*
 
 # <a name="getting-started"></a>Getting Started
 
@@ -76,7 +76,7 @@ And continue the install...
 # composer install
 # php artisan key:generate
 # php artisan make:auth
-# composer require wikiworldorder/survlooporg
+# composer require rockhopsoft/survlooporg
 # echo "0" | php artisan vendor:publish --force
 # composer dump-autoload
 # php artisan optimize
@@ -100,7 +100,7 @@ $ composer create-project laravel/laravel survlooporg "5.8.*"
 $ cd survlooporg
 $ php artisan key:generate
 $ php artisan make:auth
-$ composer require wikiworldorder/survlooporg
+$ composer require rockhopsoft/survlooporg
 $ sed -i 's/App\\User::class/App\\Models\\User::class/g' config/auth.php
 ```
 

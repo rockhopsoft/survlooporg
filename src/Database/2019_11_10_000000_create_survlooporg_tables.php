@@ -13,12 +13,12 @@ class CreateSurvLoopOrgTables extends Migration
      */
     public function up()
     {
-    	Schema::create('SLI_Installations', function(Blueprint $table)
+    	Schema::create('sli_installations', function(Blueprint $table)
 		{
-			$table->increments('InstID');
-			$table->string('InstName')->nullable();
+			$table->increments('inst_id');
+			$table->string('inst_name')->nullable();
 			$table->longText('InstDesc')->nullable();
-			$table->string('InstURL')->nullable();
+			$table->string('inst_url')->nullable();
 			$table->string('InstLogoUrl')->nullable();
 			$table->integer('InstUserID')->unsigned()->nullable();
 			$table->string('InstIPaddy')->nullable();
@@ -29,31 +29,31 @@ class CreateSurvLoopOrgTables extends Migration
 			$table->string('InstIsMobile')->nullable();
 			$table->timestamps();
 		});
-		Schema::create('SLI_InstallStats', function(Blueprint $table)
+		Schema::create('sli_install_stats', function(Blueprint $table)
 		{
 			$table->increments('InstStatID');
-			$table->integer('InstStatInstallID')->unsigned()->nullable();
-			$table->date('InstStatDate')->nullable();
-			$table->integer('InstStatDbTables')->nullable();
-			$table->integer('InstStatDbFields')->nullable();
-			$table->integer('InstStatSurveys')->nullable();
-			$table->integer('InstStatSurveyNodes')->nullable();
-			$table->integer('InstStatSurveyNodesMult')->nullable();
-			$table->integer('InstStatSurveyNodesOpen')->nullable();
-			$table->integer('InstStatSurveyNodesNumb')->nullable();
-			$table->integer('InstStatPages')->nullable();
-			$table->integer('InstStatPageNodes')->nullable();
-			$table->integer('InstStatUsers')->nullable();
-			$table->integer('InstStatSurvey1Complete')->nullable();
-			$table->integer('InstStatCodeLinesControllers')->nullable();
-			$table->integer('InstStatCodeLinesViews')->nullable();
-			$table->integer('InstStatBytesControllers')->nullable();
-			$table->integer('InstStatBytesDatabase')->nullable();
-			$table->integer('InstStatBytesViews')->nullable();
-			$table->integer('InstStatBytesUploads')->nullable();
+			$table->integer('inst_stat_install_id')->unsigned()->nullable();
+			$table->date('inst_stat_date')->nullable();
+			$table->integer('inst_stat_db_tables')->nullable();
+			$table->integer('inst_stat_db_fields')->nullable();
+			$table->integer('inst_stat_surveys')->nullable();
+			$table->integer('inst_stat_survey_nodes')->nullable();
+			$table->integer('inst_stat_survey_nodes_mult')->nullable();
+			$table->integer('inst_stat_survey_nodes_open')->nullable();
+			$table->integer('inst_stat_survey_nodes_numb')->nullable();
+			$table->integer('inst_stat_pages')->nullable();
+			$table->integer('inst_stat_page_nodes')->nullable();
+			$table->integer('inst_stat_users')->nullable();
+			$table->integer('inst_stat_survey1_complete')->nullable();
+			$table->integer('inst_stat_code_lines_controllers')->nullable();
+			$table->integer('inst_stat_code_lines_views')->nullable();
+			$table->integer('inst_stat_bytes_controllers')->nullable();
+			$table->integer('inst_stat_bytes_database')->nullable();
+			$table->integer('inst_stat_bytes_views')->nullable();
+			$table->integer('inst_stat_bytes_uploads')->nullable();
 			$table->timestamps();
 		});
-		Schema::create('SLI_Requests', function(Blueprint $table)
+		Schema::create('sli_Requests', function(Blueprint $table)
 		{
 			$table->increments('ReqID');
 			$table->string('ReqTitle')->nullable();
@@ -69,7 +69,7 @@ class CreateSurvLoopOrgTables extends Migration
 			$table->string('ReqIPaddy')->nullable();
 			$table->timestamps();
 		});
-		Schema::create('SLI_RequestSkills', function(Blueprint $table)
+		Schema::create('sli_RequestSkills', function(Blueprint $table)
 		{
 			$table->increments('ReqSklID');
 			$table->integer('ReqSklRequestID')->unsigned()->nullable();
@@ -86,10 +86,10 @@ class CreateSurvLoopOrgTables extends Migration
      */
     public function down()
     {
-    	Schema::drop('SLI_Installations');
-		Schema::drop('SLI_InstallStats');
-		Schema::drop('SLI_Requests');
-		Schema::drop('SLI_RequestSkills');
+    	Schema::drop('sli_installations');
+		Schema::drop('sli_install_stats');
+		Schema::drop('sli_Requests');
+		Schema::drop('sli_RequestSkills');
 	
     }
 }

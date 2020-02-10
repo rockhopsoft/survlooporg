@@ -17,21 +17,21 @@
 </tr>
 @forelse ($latest as $i => $inst)
     <tr @if ($i%2 > 0) class="row2" @endif >
-        <th><nobr><a href="{{ $inst->InstURL }}" target="_blank"><div class="ico32">
-            @if (isset($inst->InstIconUrl)) <img src="{{ $inst->InstIconUrl }}" border=0 > @endif </div>
-            <b>{{ $inst->InstName }}</b></a></nobr></th>
-        <td class="brdLft">{{ number_format($inst->InstStatSurvey1Complete) }}</td>
-        <td>{{ number_format($inst->InstStatUsers) }}</td>
-        <td class="brdLft">{{ number_format($inst->InstStatDbTables) }}</td>
-        <td>{{ number_format($inst->InstStatDbLinks) }}</td>
-        <td>{{ number_format($inst->InstStatDbFields) }}</td>
-        <td class="brdLft">{{ number_format($inst->InstStatSurveys) }}</td>
-        <td>{{ number_format($inst->InstStatSurveyNodes) }}</td>
-        <td>{{ number_format($inst->InstStatSurveyNodesMult) }}</td>
-        <td>{{ number_format($inst->InstStatSurveyNodesOpen) }}</td>
-        <td>{{ number_format($inst->InstStatSurveyNodesNumb) }}</td>
-        <td class="brdLft">{{ number_format($inst->InstStatPages) }}</td>
-        <td>{{ number_format($inst->InstStatPageNodes) }}</td>
+        <th><nobr><a href="{{ $inst->inst_url }}" target="_blank"><div class="ico32">
+            @if (isset($inst->inst_icon_url)) <img src="{{ $inst->inst_icon_url }}" border=0 > @endif </div>
+            <b>{{ $inst->inst_name }}</b></a></nobr></th>
+        <td class="brdLft">{{ number_format($inst->inst_stat_survey1_complete) }}</td>
+        <td>{{ number_format($inst->inst_stat_users) }}</td>
+        <td class="brdLft">{{ number_format($inst->inst_stat_db_tables) }}</td>
+        <td>{{ number_format($inst->inst_stat_db_links) }}</td>
+        <td>{{ number_format($inst->inst_stat_db_fields) }}</td>
+        <td class="brdLft">{{ number_format($inst->inst_stat_surveys) }}</td>
+        <td>{{ number_format($inst->inst_stat_survey_nodes) }}</td>
+        <td>{{ number_format($inst->inst_stat_survey_nodes_mult) }}</td>
+        <td>{{ number_format($inst->inst_stat_survey_nodes_open) }}</td>
+        <td>{{ number_format($inst->inst_stat_survey_nodes_numb) }}</td>
+        <td class="brdLft">{{ number_format($inst->inst_stat_pages) }}</td>
+        <td>{{ number_format($inst->inst_stat_page_nodes) }}</td>
     </tr>
 @empty
 @endforelse

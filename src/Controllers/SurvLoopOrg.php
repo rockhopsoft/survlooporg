@@ -3,7 +3,7 @@
   * SurvLoopOrg extends the SurvLoop main branching-tree engine.
   *
   * SurvLoop.org
-  * @package  wikiworldorder/survlooporg
+  * @package  rockhopsoft/survlooporg
   * @author  Morgan Lesko <wikiworldorder@protonmail.com>
   * @since 0.0
   */
@@ -48,7 +48,7 @@ class SurvLoopOrg extends TreeSurvForm
         return $ret;
     }
     
-    protected function customResponses($nID, $curr)
+    protected function customResponses($nID, &$curr)
     {
         if ($nID == 37) {
             
@@ -98,12 +98,12 @@ class SurvLoopOrg extends TreeSurvForm
     
     protected function latestInstallStats()
     {
-        return DB::table('SLI_InstallStats')
-            ->join('SLI_Installations', 'SLI_InstallStats.InstStatInstallID', 
-                '=', 'SLI_Installations.InstID')
-            ->where('SLI_InstallStats.InstStatDate', '=', date("Y-m-d"))
-            ->orderBy('SLI_InstallStats.InstStatInstallID', 'asc')
-            ->select('SLI_Installations.*', 'SLI_InstallStats.*')
+        return DB::table('sli_install_stats')
+            ->join('sli_installations', 'sli_install_stats.inst_stat_install_id', 
+                '=', 'sli_installations.inst_id')
+            ->where('sli_install_stats.inst_stat_date', '=', date("Y-m-d"))
+            ->orderBy('sli_install_stats.inst_stat_install_id', 'asc')
+            ->select('sli_installations.*', 'sli_install_stats.*')
             ->get();
     }
     
@@ -115,28 +115,28 @@ class SurvLoopOrg extends TreeSurvForm
                 ->get();
             if ($insts->isNotEmpty()) {
                 foreach ($insts as $i) {
-                    if (isset($i->InstURL) && trim($i->InstURL) != '') {
+                    if (isset($i->inst_url) && trim($i->inst_url) != '') {
                         $stats = [];
-                        if ($i->InstID == 1) {
+                        if ($i->inst_id == 1) {
                             $url = 'https://survloop.org/survloop-engine-stats.json';
                             //$stats = json_decode(file_get_contents($url), TRUE);
                         } else {
-                            $file = $i->InstURL . '/survloop-stats.json';
+                            $file = $i->inst_url . '/survloop-stats.json';
                             $stats = json_decode(file_get_contents($file), TRUE);
                         }
                         if (sizeof($stats) > 0) {
-                            $stat = SLIInstallStats::where('InstStatInstallID', $i->InstID)
-                                ->where('InstStatDate', date("Y-m-d"))
+                            $stat = SLIInstallStats::where('inst_stat_install_id', $i->inst_id)
+                                ->where('inst_stat_date', date("Y-m-d"))
                                 ->first();
                             if (!$stat) {
                                 $stat = new SLIInstallStats;
-                                $stat->InstStatInstallID = $i->InstID;
+                                $stat->inst_stat_install_id = $i->inst_id;
                             }
                             foreach ($stats as $fld => $val) {
-                                if ($fld == 'IconUrl') {
-                                    $i->{ 'Inst' . $fld } = $val;
+                                if ($fld == 'icon_url') {
+                                    $i->{ 'inst_' . $fld } = $val;
                                 } else {
-                                    $stat->{ 'InstStat' . $fld } = $val;
+                                    $stat->{ 'inst_stat_' . $fld } = $val;
                                 }
                             }
                             $stat->save();
@@ -153,42 +153,107 @@ class SurvLoopOrg extends TreeSurvForm
             "width"  => 600,
             "height" => 600,
             "lines"  => [
-                [ "dat" => [ "x" => [], "y" => [] ], "datwrit" => [], "type"  => 'scatter',"mode" => 'lines', 
-                    "name" => 'Data Tables', "color" => 'rgb(43,52,147)', "width" => 1 ],
-                [ "dat" => [ "x" => [], "y" => [] ], "datwrit" => [], "type"  => 'scatter',"mode" => 'lines', 
-                    "name" => 'Table Linkages', "color" => 'rgb(91,192,222)', "width" => 1 ],
-                [ "dat" => [ "x" => [], "y" => [] ], "datwrit" => [], "type"  => 'scatter',"mode" => 'lines', 
-                    "name" => 'Data Fields', "color" => 'rgb(42,171,210)', "width" => 1 ],
-                [ "dat" => [ "x" => [], "y" => [] ], "datwrit" => [], "type"  => 'scatter',"mode" => 'lines', 
-                    "name" => 'Surveys', "color" => 'rgb(65,108,189)', "width" => 1 ],
-                [ "dat" => [ "x" => [], "y" => [] ], "datwrit" => [], "type"  => 'scatter',"mode" => 'lines', 
-                    "name" => 'Survey Multiple-Choice', "color" => 'rgb(0,109,54)', "width" => 1 ],
-                [ "dat" => [ "x" => [], "y" => [] ], "datwrit" => [], "type"  => 'scatter',"mode" => 'lines', 
-                    "name" => 'Survey Open Ended', "color" => 'rgb(41,183,111)', "width" => 1 ],
-                [ "dat" => [ "x" => [], "y" => [] ], "datwrit" => [], "type"  => 'scatter',"mode" => 'lines', 
-                    "name" => 'Survey Structure Nodes', "color" => 'rgb(83,241,235)', "width" => 1 ]
+                [ 
+                    "dat" => [ 
+                        "x" => [], 
+                        "y" => [] 
+                    ], 
+                    "datwrit" => [], 
+                    "type"  => 'scatter',
+                    "mode" => 'lines', 
+                    "name" => 'Data Tables', 
+                    "color" => 'rgb(43,52,147)', 
+                    "width" => 1 
+                ], [ 
+                    "dat" => [
+                        "x" => [], 
+                        "y" => [] 
+                    ],
+                    "datwrit" => [], 
+                    "type"  => 'scatter',
+                    "mode" => 'lines', 
+                    "name" => 'Table Linkages', 
+                    "color" => 'rgb(91,192,222)', 
+                    "width" => 1 
+                ], [ 
+                    "dat" => [ 
+                        "x" => [], 
+                        "y" => [] 
+                    ], 
+                    "datwrit" => [], 
+                    "type"  => 'scatter',
+                    "mode" => 'lines', 
+                    "name" => 'Data Fields', 
+                    "color" => 'rgb(42,171,210)', 
+                    "width" => 1
+                ], [ 
+                    "dat" => [ 
+                        "x" => [], 
+                        "y" => [] 
+                    ], 
+                    "datwrit" => [], 
+                    "type"  => 'scatter',
+                    "mode" => 'lines', 
+                    "name" => 'Surveys', 
+                    "color" => 'rgb(65,108,189)', 
+                    "width" => 1 
+                ], [ 
+                    "dat" => [
+                        "x" => [], 
+                        "y" => []
+                    ], 
+                    "datwrit" => [], 
+                    "type"  => 'scatter',
+                    "mode" => 'lines', 
+                    "name" => 'Survey Multiple-Choice', 
+                    "color" => 'rgb(0,109,54)', 
+                    "width" => 1 
+                ], [ 
+                    "dat" => [ 
+                        "x" => [], 
+                        "y" => [] 
+                    ], 
+                    "datwrit" => [], 
+                    "type"  => 'scatter',
+                    "mode" => 'lines', 
+                    "name" => 'Survey Open Ended', 
+                    "color" => 'rgb(41,183,111)', 
+                    "width" => 1 
+                ], [ 
+                    "dat" => [ 
+                        "x" => [], 
+                        "y" => [] 
+                    ], 
+                    "datwrit" => [], 
+                    "type"  => 'scatter',
+                    "mode" => 'lines', 
+                    "name" => 'Survey Structure Nodes', 
+                    "color" => 'rgb(83,241,235)', 
+                    "width" => 1 
                 ]
-            ];
+            ]
+        ];
         
         $dailyTots = [];
-        $chk = SLIInstallStats::orderBy('InstStatDate', 'asc')
+        $chk = SLIInstallStats::orderBy('inst_stat_date', 'asc')
             ->get();
         if ($chk->isNotEmpty()) {
             foreach ($chk as $stat) {
-                if (!isset($dailyTots[$stat->InstStatDate])) {
-                    $dailyTots[$stat->InstStatDate] = [
-                        "DbTables"        => 0,
-                        "DbLinks"         => 0,
-                        "DbFields"        => 0,
-                        "Surveys"         => 0,
-                        "SurveyNodesMult" => 0,
-                        "SurveyNodesOpen" => 0,
-                        "SurveyNodes"     => 0
+                if (!isset($dailyTots[$stat->inst_stat_date])) {
+                    $dailyTots[$stat->inst_stat_date] = [
+                        "db_tables"         => 0,
+                        "db_links"          => 0,
+                        "db_fields"         => 0,
+                        "surveys"           => 0,
+                        "survey_nodes_mult" => 0,
+                        "survey_nodes_open" => 0,
+                        "survey_nodes"      => 0
                     ];
                 }
-                foreach ($dailyTots[$stat->InstStatDate] as $fld => $cnt) {
-                    if (isset($stat->{ 'InstStat' . $fld })) {
-                        $dailyTots[$stat->InstStatDate][$fld] += intVal($stat->{ 'InstStat' . $fld });
+                foreach ($dailyTots[$stat->inst_stat_date] as $fld => $cnt) {
+                    if (isset($stat->{ 'inst_stat_' . $fld })) {
+                        $dailyTots[$stat->inst_stat_date][$fld] 
+                            += intVal($stat->{ 'inst_stat_' . $fld });
                     }
                 }
             }
@@ -196,22 +261,25 @@ class SurvLoopOrg extends TreeSurvForm
                 for ($i = 0; $i < 7; $i++) {
                     $this->v["graph"]["lines"][$i]["dat"]["x"][] = $date;
                 }
-                $this->v["graph"]["lines"][0]["dat"]["y"][] = $stats["DbTables"];
-                $this->v["graph"]["lines"][1]["dat"]["y"][] = $stats["DbLinks"];
-                $this->v["graph"]["lines"][2]["dat"]["y"][] = $stats["DbFields"];
-                $this->v["graph"]["lines"][3]["dat"]["y"][] = $stats["Surveys"];
-                $this->v["graph"]["lines"][4]["dat"]["y"][] = $stats["SurveyNodesMult"];
-                $this->v["graph"]["lines"][5]["dat"]["y"][] = $stats["SurveyNodesOpen"];
+                $this->v["graph"]["lines"][0]["dat"]["y"][] = $stats["db_tables"];
+                $this->v["graph"]["lines"][1]["dat"]["y"][] = $stats["db_links"];
+                $this->v["graph"]["lines"][2]["dat"]["y"][] = $stats["db_fields"];
+                $this->v["graph"]["lines"][3]["dat"]["y"][] = $stats["surveys"];
+                $this->v["graph"]["lines"][4]["dat"]["y"][] = $stats["survey_nodes_mult"];
+                $this->v["graph"]["lines"][5]["dat"]["y"][] = $stats["survey_nodes_open"];
                 $this->v["graph"]["lines"][6]["dat"]["y"][] 
-                    = $stats["SurveyNodes"]-$stats["SurveyNodesMult"]-$stats["SurveyNodesOpen"];
+                    = $stats["survey_nodes"]-$stats["survey_nodes_mult"]-$stats["survey_nodes_open"];
             }
             foreach ($this->v["graph"]["lines"] as $i => $line) {
-                $this->v["graph"]["lines"][$i]["datwrit"]["x"] = '\'' . implode('\', \'', $line["dat"]["x"]) . '\'';
+                $this->v["graph"]["lines"][$i]["datwrit"]["x"] = '\'' 
+                    . implode('\', \'', $line["dat"]["x"]) . '\'';
                 $this->v["graph"]["lines"][$i]["datwrit"]["y"] = implode(', ', $line["dat"]["y"]);
             }
         }
-        $GLOBALS["SL"]->pageJAVA 
-            .= view('vendor.survlooporg.nodes.77-gather-install-stats-js', $this->v["graph"])->render();
+        $GLOBALS["SL"]->pageJAVA .= view(
+            'vendor.survlooporg.nodes.77-gather-install-stats-js', 
+            $this->v["graph"]
+        )->render();
         $GLOBALS["SL"]->x["needsPlots"] = true;
     	return view('vendor.survlooporg.nodes.77-gather-install-stats', $this->v)->render();
     }
@@ -230,7 +298,7 @@ class SurvLoopOrg extends TreeSurvForm
     {
         header('Content-Type: application/json');
         $GLOBALS["SL"] = new Globals($request, 3, 3, 3);
-        $stats = $GLOBALS["SL"]->getJsonSurvLoopStats('wikiworldorder/survloop');
+        $stats = $GLOBALS["SL"]->getJsonSurvLoopStats('rockhopsoft/survloop');
     	echo json_encode($stats);
         exit;
     }
@@ -272,10 +340,13 @@ class SurvLoopOrg extends TreeSurvForm
                 ]
             ]
         ];
-        return view('vendor.survlooporg.inc-documentation-navigation', [
-            "docuNav"  => $docuNav,
-            "currPage" => $this->getCurrPage()
-        ])->render();
+        return view(
+            'vendor.survlooporg.inc-documentation-navigation', 
+            [
+                "docuNav"  => $docuNav,
+                "currPage" => $this->getCurrPage()
+            ]
+        )->render();
     }
     
 }

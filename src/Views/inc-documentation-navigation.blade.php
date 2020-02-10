@@ -21,8 +21,8 @@
 @endforelse
 
 <div class="pT20"><p>
-	<a href="https://github.com/wikiworldorder/survloop" target="_blank" 
+	<a href="https://github.com/rockhopsoft/survloop" target="_blank" 
 		class="btn btn-secondary btn-lg btn-block taL mB20"
 		><i class="fa fa-github mR5" aria-hidden="true"></i> 
-		wikiworldorder/survloop</a>
+		rockhopsoft/survloop</a>
 </p></div>

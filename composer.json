@@ -1,5 +1,5 @@
 {
-    "name": "wikiworldorder/survlooporg",
+    "name": "rockhopsoft/survlooporg",
     "description": "SurvLoop is a Laravel-based engine for designing a database and creating a mobile-friendly user interface to fill it.",
     "keywords": [
     	"laravel", 
@@ -17,13 +17,13 @@
     "authors": [
         {
             "name": "Morgan Lesko",
-            "homepage": "https://github.com/wikiworldorder/survlooporg",
+            "homepage": "https://github.com/rockhopsoft/survlooporg",
             "email": "mo@wikiworldorder.org",
             "role": "Developer"
         }
     ],
     "require": {
-        "wikiworldorder/survloop": "*@dev"
+        "rockhopsoft/survloop": "*@dev"
     },
     "autoload": {
         "psr-4": {

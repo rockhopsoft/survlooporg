@@ -3,7 +3,7 @@
   * SurvLoopOrgSearcher extends the SurvLoop Searcher for some hard-coded overrides.
   *
   * SurvLoop.org
-  * @package  wikiworldorder/survlooporg
+  * @package  rockhopsoft/survlooporg
   * @author  Morgan Lesko <wikiworldorder@protonmail.com>
   * @since 0.0
   */

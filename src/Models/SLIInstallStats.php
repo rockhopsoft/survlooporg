@@ -5,31 +5,31 @@ use Illuminate\Database\Eloquent\Model;
 
 class SLIInstallStats extends Model
 {
-    protected $table      = 'SLI_InstallStats';
-    protected $primaryKey = 'InstStatID';
+    protected $table      = 'sli_install_stats';
+    protected $primaryKey = 'inst_stat_id';
     public $timestamps    = true;
     protected $fillable   = 
     [    
-		'InstStatInstallID', 
-		'InstStatDate', 
-		'InstStatDbTables', 
-		'InstStatDbFields', 
-		'InstStatDbLinks', 
-		'InstStatSurveys', 
-		'InstStatSurveyNodes', 
-		'InstStatSurveyNodesMult',
-		'InstStatSurveyNodesOpen',
-		'InstStatSurveyNodesNumb',
-		'InstStatPages', 
-		'InstStatPageNodes', 
-		'InstStatUsers', 
-		'InstStatSurvey1Complete', 
-		'InstStatCodeLinesControllers', 
-		'InstStatCodeLinesViews', 
-		'InstStatBytesControllers',
-		'InstStatBytesDatabase',
-		'InstStatBytesUploads',
-		'InstStatBytesViews',
+		'inst_stat_install_id', 
+		'inst_stat_date', 
+		'inst_stat_db_tables', 
+		'inst_stat_db_fields', 
+		'inst_stat_db_links', 
+		'inst_stat_surveys', 
+		'inst_stat_survey_nodes', 
+		'inst_stat_survey_nodes_mult',
+		'inst_stat_survey_nodes_open',
+		'inst_stat_survey_nodes_numb',
+		'inst_stat_pages', 
+		'inst_stat_page_nodes', 
+		'inst_stat_users', 
+		'inst_stat_survey1_complete', 
+		'inst_stat_code_lines_controllers', 
+		'inst_stat_code_lines_views', 
+		'inst_stat_bytes_controllers',
+		'inst_stat_bytes_database',
+		'inst_stat_bytes_uploads',
+		'inst_stat_bytes_views',
     ];
     
     // END SurvLoop auto-generated portion of Model

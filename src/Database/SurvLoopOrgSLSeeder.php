@@ -22,8 +22,8 @@ class SLSeeder extends Seeder
 			'DbName' => 'SurvLoop',
 			'DbDesc' => 'All The Data Are Belong',
 			'DbMission' => 'Empower you to design your complex databases, collect data with an easy user experience, and create an API to share the data with the world!',
-			'DbTables' => '38',
-			'DbFields' => '280'
+			'db_tables' => '38',
+			'db_fields' => '280'
 		]);
 	
 	DB::table('SL_Tables')->insert([
@@ -6091,7 +6091,7 @@ class SLSeeder extends Seeder
 			'DefDatabase' => '3',
 			'DefSet' => 'System Settings',
 			'DefSubset' => 'cust-package',
-			'DefDescription' => 'wikiworldorder/survloop'
+			'DefDescription' => 'rockhopsoft/survloop'
 		]);
 		DB::table('SL_Definitions')->insert([
 			'DefID' => 601,

@@ -3,7 +3,7 @@
   * SurvLoopOrgAdmin extends the SurvLoop admin umbrella.
   *
   * SurvLoop.org
-  * @package  wikiworldorder/survlooporg
+  * @package  rockhopsoft/survlooporg
   * @author  Morgan Lesko <wikiworldorder@protonmail.com>
   * @since 0.0
   */
@@ -24,7 +24,8 @@ class SurvLoopOrgAdmin extends AdminSubsController
     
     public function initPowerUser($uID = -3)
     {
-        if ($this->v["uID"] <= 0 || !$this->v["user"]->hasRole('administrator|staff|databaser|brancher|volunteer')) {
+        if ($this->v["uID"] <= 0 
+            || !$this->v["user"]->hasRole('administrator|staff|databaser|brancher|volunteer')) {
             return redirect('/');
         }
         return [];
@@ -34,8 +35,12 @@ class SurvLoopOrgAdmin extends AdminSubsController
     {
         $this->custReport = new SurvLoopOrg($request);
         
-        if (!isset($this->v["currPage"])) $this->v["currPage"] = ['/dashboard', ''];
-        if (trim($this->v["currPage"][0]) == '') $this->v["currPage"][0] = '/dashboard';
+        if (!isset($this->v["currPage"])) {
+            $this->v["currPage"] = ['/dashboard', ''];
+        }
+        if (trim($this->v["currPage"][0]) == '') {
+            $this->v["currPage"][0] = '/dashboard';
+        }
         $this->v["allowEdits"] = ($this->v["user"]->hasRole('administrator|staff'));
         
         $this->loadSysSettings();

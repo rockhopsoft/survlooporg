@@ -17,11 +17,11 @@ class SLISeeder extends Seeder
 	DB::table('SL_Databases')->insert([
 			'DbID' => 1,
 			'DbUser' => '1',
-			'DbPrefix' => 'SLI_',
+			'DbPrefix' => 'sli_',
 			'DbName' => 'SurvLoop Installs',
 			'DbDesc' => 'Who\'s Using SurvLoop?',
-			'DbTables' => '5',
-			'DbFields' => '43'
+			'db_tables' => '5',
+			'db_fields' => '43'
 		]);
 	
 	DB::table('SL_Tables')->insert([
@@ -49,7 +49,7 @@ class SLISeeder extends Seeder
 		DB::table('SL_Tables')->insert([
 			'TblID' => 40,
 			'TblDatabase' => '1',
-			'TblAbbr' => 'InstStat',
+			'TblAbbr' => 'inst_stat',
 			'TblName' => 'InstallStats',
 			'TblEng' => 'Install Stats',
 			'TblDesc' => 'Each record preserves a snapshot of various statistics tracked for this SurvLoop installation.',
@@ -349,7 +349,7 @@ class SLISeeder extends Seeder
 			'FldTable' => '40',
 			'FldOrd' => '3',
 			'FldSpecSource' => '0',
-			'FldName' => 'DbFields',
+			'FldName' => 'db_fields',
 			'FldEng' => 'Database Count: Fields',
 			'FldDesc' => 'Indicates the total number of database fields designed within this Installation\'s package. This count indicates a relative span of the database.',
 			'FldForeignMin' => 'N',
@@ -370,7 +370,7 @@ class SLISeeder extends Seeder
 			'FldTable' => '40',
 			'FldOrd' => '2',
 			'FldSpecSource' => '0',
-			'FldName' => 'DbTables',
+			'FldName' => 'db_tables',
 			'FldEng' => 'Database Count: Tables',
 			'FldDesc' => 'Indicates the total number of database tables designed within this Installation\'s package. This count indicates a relative quantity of database structures and complexity.',
 			'FldForeignMin' => 'N',
@@ -1358,7 +1358,7 @@ pre { background: #FCFBFF; padding: 20px; }
             <a href="/documentation">Documentation</a><br>
             <a href="/site-map">Site Map</a><br>
         </div><div class="col-md-3 pB20">
-            <a href="https://github.com/wikiworldorder/survloop" target="_blank">On GitHub
+            <a href="https://github.com/rockhopsoft/survloop" target="_blank">On GitHub
             <div class="disBlo mTn10" style="font-size: 550%;"><i class="fa fa-github" aria-hidden="true"></i></div></a>
         </div><div class="col-md-3 pB20">
             <span class="slGrey">A project by,<br />and for the toolbox of</span>
@@ -1384,7 +1384,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'DefDatabase' => '1',
 			'DefSet' => 'System Settings',
 			'DefSubset' => 'cust-package',
-			'DefDescription' => 'wikiworldorder/survlooporg'
+			'DefDescription' => 'rockhopsoft/survlooporg'
 		]);
 		DB::table('SL_Definitions')->insert([
 			'DefID' => 594,
@@ -1626,8 +1626,8 @@ pre { background: #FCFBFF; padding: 20px; }
 			'TreeDatabase' => '1',
 			'TreeUser' => '1',
 			'TreeType' => 'Redirect',
-			'TreeName' => 'https://github.com/wikiworldorder/survloop',
-			'TreeDesc' => 'https://github.com/wikiworldorder/survloop',
+			'TreeName' => 'https://github.com/rockhopsoft/survloop',
+			'TreeDesc' => 'https://github.com/rockhopsoft/survloop',
 			'TreeSlug' => 'github'
 		]);
 		DB::table('SL_Tree')->insert([
@@ -2095,7 +2095,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'NodeTree' => '5',
 			'NodeParentID' => '42',
 			'NodeType' => 'Instructions',
-			'NodePromptText' => '<a href="https://github.com/wikiworldorder/survloop" target="_blank" class="btn btn-primary btn-lg btn-block taL mB20"><div class="row"><div class="col-3 fPerc300 pT5 pL20"><i class="fa fa-github" aria-hidden="true"></i></div><div class="col-9 taL pT15">github.com/<br />wikiworldorder/survloop</div></div></a>'
+			'NodePromptText' => '<a href="https://github.com/rockhopsoft/survloop" target="_blank" class="btn btn-primary btn-lg btn-block taL mB20"><div class="row"><div class="col-3 fPerc300 pT5 pL20"><i class="fa fa-github" aria-hidden="true"></i></div><div class="col-9 taL pT15">github.com/<br />rockhopsoft/survloop</div></div></a>'
 		]);
 		DB::table('SL_Node')->insert([
 			'NodeID' => 44,
@@ -2183,7 +2183,7 @@ DB_PASSWORD=secret</pre>
 <p>&nbsp;</p>
 You could do things like install Laravel\'s out-of-the-box user authentication tools:
 <pre>$ php artisan make:auth</pre>
-<p>Or install the SurvLoop software I\'ve started: <a href="https://packagist.org/packages/wikiworldorder/survloop" target="_blank" rel="noopener">https://packagist.org/packages/wikiworldorder/survloop</a></p>
+<p>Or install the SurvLoop software I\'ve started: <a href="https://packagist.org/packages/rockhopsoft/survloop" target="_blank" rel="noopener">https://packagist.org/packages/rockhopsoft/survloop</a></p>
 <p>Or anything else you can imagine: <a href="https://laravel.com/docs/5.8" target="_blank" rel="noopener">https://laravel.com/docs/5.8</a></p>
 <p>&nbsp;</p>
 <h3><a href="/how-to-install-survloop#n494"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> How to install SurvLoop <nobr>(after installing Laravel)</nobr></a></h3>
@@ -2340,7 +2340,7 @@ $ certbot renew</pre>
 <hr>
 <p> </p>
 <h2>Start Using Laravel or Install SurvLoop</h2>
-<p>You should now have a functioning server with basic, common security measures installed! From here, you can <a href="https://github.com/wikiworldorder/survloop#getting-started">install SurvLoop</a>, any other Laravel-based projects, or start building your own. You should now see the basic Laravel page when you browse to your IP address or domain name.</p>
+<p>You should now have a functioning server with basic, common security measures installed! From here, you can <a href="https://github.com/rockhopsoft/survloop#getting-started">install SurvLoop</a>, any other Laravel-based projects, or start building your own. You should now see the basic Laravel page when you browse to your IP address or domain name.</p>
 <p><a href="/how-to-install-survloop" class="btn btn-lg btn-primary btn-block taL">Next, Install SurvLoop on top of Laravel</a></p>',
 			'NodePromptAfter' => '<style> #treeWrap1048 { margin-top: 30px; } </style>',
 			'NodeOpts' => '89'
@@ -2650,7 +2650,7 @@ printDocumentationNav, to view survlooporg.inc-documentation-navigation<br>'
 <pre>...
 "require": {
 	...
-    "wikiworldorder/survloop": "^0.2.10",
+    "rockhopsoft/survloop": "^0.2.10",
 	...
 },
 ...
@@ -2658,7 +2658,7 @@ printDocumentationNav, to view survlooporg.inc-documentation-navigation<br>'
 	...
 	"psr-4": {
 		...
-		"SurvLoop\\": "vendor/wikiworldorder/survloop/src/",
+		"SurvLoop\\": "vendor/rockhopsoft/survloop/src/",
 	}
 	...
 }, ...
@@ -2768,7 +2768,7 @@ survlooporg.inc-documentation-navigation</span>',
 			'NodeParentOrder' => '2',
 			'NodeType' => 'Instructions',
 			'NodePromptText' => '<h3>SurvLoop Code Base Orientation</h3>
-<div class="pB20"><a href="https://github.com/wikiworldorder/survloop" class="btn btn-lg btn-primary btn-block mT20"><i class="fa fa-github mR5" aria-hidden="true"></i> wikiworldorder/survloop on GitHub</a></div>
+<div class="pB20"><a href="https://github.com/rockhopsoft/survloop" class="btn btn-lg btn-primary btn-block mT20"><i class="fa fa-github mR5" aria-hidden="true"></i> rockhopsoft/survloop on GitHub</a></div>
 <p>Here are the start of documents to get you familiar with the SurvLoop landscape, if you\'re starting to dive in.</p>
 <p><a href="/package-files-folders-classes" class="btn btn-lg btn-primary btn-block">SurvLoop Package\'s File &amp; Folder Layout</a></p>
 <p>&nbsp;</p>
@@ -2792,51 +2792,51 @@ survlooporg.inc-documentation-navigation</span>',
 			'NodeType' => 'Instructions',
 			'NodePromptText' => '<h2 class="slBlueDark">SurvLoop Package\'s File &amp; Folder Layout</h2>
 
-<p>This document should help map out the contents of the SurvLoop package on GitHub.</p><p>After months of initial development, this open data engine was migrated to run atop the Laravel framework, which is a <a href="https://blog.pusher.com/laravel-mvc-use/" target="_blank">Model View Controller (</a><a href="https://blog.pusher.com/laravel-mvc-use/" target="_blank">MVC</a><a href="https://blog.pusher.com/laravel-mvc-use/" target="_blank">)</a>.</p><iframe src="https://www.youtube.com/embed/CAO_1yCjvBs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="315" frameborder="0"></iframe><p>If you\'re new to Laravel, this package gets installed here: /root-folder/vendor/wikiworldorder/survloop<br></p>
-<h4><a href="https://github.com/wikiworldorder/survloop" target="_blank"><i class="fa fa-github mR5" aria-hidden="true"></i> wikiworldorder/survloop</a></h4>
+<p>This document should help map out the contents of the SurvLoop package on GitHub.</p><p>After months of initial development, this open data engine was migrated to run atop the Laravel framework, which is a <a href="https://blog.pusher.com/laravel-mvc-use/" target="_blank">Model View Controller (</a><a href="https://blog.pusher.com/laravel-mvc-use/" target="_blank">MVC</a><a href="https://blog.pusher.com/laravel-mvc-use/" target="_blank">)</a>.</p><iframe src="https://www.youtube.com/embed/CAO_1yCjvBs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="315" frameborder="0"></iframe><p>If you\'re new to Laravel, this package gets installed here: /root-folder/vendor/rockhopsoft/survloop<br></p>
+<h4><a href="https://github.com/rockhopsoft/survloop" target="_blank"><i class="fa fa-github mR5" aria-hidden="true"></i> rockhopsoft/survloop</a></h4>
 <div class="pL20"><ul>
-<li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/composer.json" target="_blank">composer.json</a></b>: Defines more packages required by SurvLoop, as well as easier references to some packages.</li>
-<li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src" target="_blank">src</a></b>: Repository\'s main source code.
+<li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/composer.json" target="_blank">composer.json</a></b>: Defines more packages required by SurvLoop, as well as easier references to some packages.</li>
+<li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src" target="_blank">src</a></b>: Repository\'s main source code.
 <ul>
-    <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/SurvLoopServiceProvider.php" target="_blank">SurvLoopServiceProvider.php</a></b>: SurvLoopServiceProvider manages which package files and folders need to be copied to elsewhere in the system. This mostly just runs after installation, and perhaps of some other code updates.</li>
-    <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers" target="_blank">Controllers</a></b>: Most of the PHP algorithms and logic which process and manipulate data, and call Views to output the proper results.
+    <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/SurvLoopServiceProvider.php" target="_blank">SurvLoopServiceProvider.php</a></b>: SurvLoopServiceProvider manages which package files and folders need to be copied to elsewhere in the system. This mostly just runs after installation, and perhaps of some other code updates.</li>
+    <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers" target="_blank">Controllers</a></b>: Most of the PHP algorithms and logic which process and manipulate data, and call Views to output the proper results.
     <ul>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Admin" target="_blank">Admin</a></b>: These PHP classes controll both all admin tools for managing survloop, but also handles routing for SurvLoop pages and surveys which require any user login.</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Auth" target="_blank">Auth</a></b>: A few Laravel authorization classes customized by SurvLoop.</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals" target="_blank">Globals</a></b>: These classes can be easily accessed from both Controllers and Views.</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Middleware" target="_blank">Middleware</a></b>: A few Laravel files overwritten by SurvLoop.</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Stats" target="_blank">Stats</a></b>: These classes are used by SurvLoop to manage the more complicated statistical needs, charts, and graphs.</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree" target="_blank">Tree</a></b>: This is really the core trunk of SurvLoop, classes which manage the branching trees which generate all surveys, pages, etc.</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Admin" target="_blank">Admin</a></b>: These PHP classes controll both all admin tools for managing survloop, but also handles routing for SurvLoop pages and surveys which require any user login.</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Auth" target="_blank">Auth</a></b>: A few Laravel authorization classes customized by SurvLoop.</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals" target="_blank">Globals</a></b>: These classes can be easily accessed from both Controllers and Views.</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Middleware" target="_blank">Middleware</a></b>: A few Laravel files overwritten by SurvLoop.</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Stats" target="_blank">Stats</a></b>: These classes are used by SurvLoop to manage the more complicated statistical needs, charts, and graphs.</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree" target="_blank">Tree</a></b>: This is really the core trunk of SurvLoop, classes which manage the branching trees which generate all surveys, pages, etc.</li>
     </ul>
     </li>
-    <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Database" target="_blank">Database</a></b>: Includes migration and seeder files which Laravel can use to install SurvLoop.</li>
-    <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Models" target="_blank">Models</a></b>: Copies of all the <a href="https://laravel.com/docs/5.8/eloquent" target="_blank">Eloquent Models</a> used by this package, generated by this same SurvLoop installation.</li>
-    <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Routes" target="_blank">Routes</a></b>: All of SurvLoop\'s routing happens here, passing a url request to the right Controller.</li><li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Uploads" target="_blank">Uploads</a></b>: Contains images and photos in SurvLoop\'s default media gallery, most are simply needed for SurvLoop branding.</li>
-    <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views" target="_blank">Views</a></b>: Includes <a href="https://laravel.com/docs/5.8/blade" target="_blank">Blade Templates</a> which are called by controllers, and where most of SurvLoop\'s HTML, Javascript, and CSS can be found. Templates for...
+    <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Database" target="_blank">Database</a></b>: Includes migration and seeder files which Laravel can use to install SurvLoop.</li>
+    <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Models" target="_blank">Models</a></b>: Copies of all the <a href="https://laravel.com/docs/5.8/eloquent" target="_blank">Eloquent Models</a> used by this package, generated by this same SurvLoop installation.</li>
+    <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Routes" target="_blank">Routes</a></b>: All of SurvLoop\'s routing happens here, passing a url request to the right Controller.</li><li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Uploads" target="_blank">Uploads</a></b>: Contains images and photos in SurvLoop\'s default media gallery, most are simply needed for SurvLoop branding.</li>
+    <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views" target="_blank">Views</a></b>: Includes <a href="https://laravel.com/docs/5.8/blade" target="_blank">Blade Templates</a> which are called by controllers, and where most of SurvLoop\'s HTML, Javascript, and CSS can be found. Templates for...
     <ul>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/admin" target="_blank">admin</a></b>: general SurvLoop-standard admin interfaces
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/admin" target="_blank">admin</a></b>: general SurvLoop-standard admin interfaces
         <ul>
-            <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/admin/db" target="_blank">db</a></b>: admin database design tools</li>
-            <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/admin/tree" target="_blank">tree</a></b>: admin survey and page design tools</li>
+            <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/admin/db" target="_blank">db</a></b>: admin database design tools</li>
+            <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/admin/tree" target="_blank">tree</a></b>: admin survey and page design tools</li>
         </ul>
         </li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/auth" target="_blank">auth</a></b>: user authentication, customizing Laravel\'s style
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/auth" target="_blank">auth</a></b>: user authentication, customizing Laravel\'s style
         <ul>
-            <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/auth/passwords" target="_blank">passwords</a></b>: user password tools</li>
+            <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/auth/passwords" target="_blank">passwords</a></b>: user password tools</li>
         </ul>
         </li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/css" target="_blank">css</a></b>: cascading style sheets for the SurvLoop engine</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/elements" target="_blank">elements</a></b>: smaller site design or usability elements</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/emails" target="_blank">emails</a></b>: sending emails via the installation</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/errors" target="_blank">errors</a></b>: web site error pages</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/forms" target="_blank">forms</a></b>: generating survey forms and compartmentalized input tools</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/js" target="_blank">js</a></b>: javascript which runs lots of user experience for the SurvLoop engine</li>
-        <li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/reports" target="_blank">reports</a></b>: generating reports, graphs, and geographic maps</li></ul></li></ul></li>
-<li><b><a href="https://github.com/wikiworldorder/survloop/blob/master/tests" target="_blank">tests</a></b>: Holding place to remind me to add as much unit testing as possible and appropriate.</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/css" target="_blank">css</a></b>: cascading style sheets for the SurvLoop engine</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/elements" target="_blank">elements</a></b>: smaller site design or usability elements</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/emails" target="_blank">emails</a></b>: sending emails via the installation</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/errors" target="_blank">errors</a></b>: web site error pages</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/forms" target="_blank">forms</a></b>: generating survey forms and compartmentalized input tools</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/js" target="_blank">js</a></b>: javascript which runs lots of user experience for the SurvLoop engine</li>
+        <li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/reports" target="_blank">reports</a></b>: generating reports, graphs, and geographic maps</li></ul></li></ul></li>
+<li><b><a href="https://github.com/rockhopsoft/survloop/blob/master/tests" target="_blank">tests</a></b>: Holding place to remind me to add as much unit testing as possible and appropriate.</li>
 </ul></div>
-<h4><a href="https://github.com/wikiworldorder/survloop-libraries" target="_blank"><i class="fa fa-github mR5" aria-hidden="true"></i> wikiworldorder/survloop-libraries</a></h4>
+<h4><a href="https://github.com/rockhopsoft/survloop-libraries" target="_blank"><i class="fa fa-github mR5" aria-hidden="true"></i> rockhopsoft/survloop-libraries</a></h4>
 <div class="pL20"><ul>
-<li><b><a href="https://github.com/wikiworldorder/survloop-libraries/blob/master/src" target="_blank">src</a></b>: Third-party code libraries which SurvLoop incorporates.</li></ul><ul>
+<li><b><a href="https://github.com/rockhopsoft/survloop-libraries/blob/master/src" target="_blank">src</a></b>: Third-party code libraries which SurvLoop incorporates.</li></ul><ul>
 </ul></div>',
 			'NodePromptAfter' => '<style>
 #treeWrap750 { margin-top: 30px; }
@@ -3111,7 +3111,7 @@ survlooporg.inc-documentation-navigation</span>'
 <li><b>Client/ClientSearcher</b><br>extends<br>SurvLoop/Searcher</li>
 </ul></div>
 <h4>Simplest Example:</h4>
-<p><a href="https://github.com/wikiworldorder/survlooporg/tree/master/src" target="_blank" class="btn btn-primary btn-block taL mB20"><i class="fa fa-github mR5" aria-hidden="true"></i> wikiworldorder/survlooporg</a></p>',
+<p><a href="https://github.com/rockhopsoft/survlooporg/tree/master/src" target="_blank" class="btn btn-primary btn-block taL mB20"><i class="fa fa-github mR5" aria-hidden="true"></i> rockhopsoft/survlooporg</a></p>',
 			'NodeOpts' => '89'
 		]);
 		DB::table('SL_Node')->insert([
@@ -3737,8 +3737,8 @@ $ echo "0" | php artisan vendor:publish --force</pre><p>If you wanted, you could
 			'NodeType' => 'Instructions',
 			'NodePromptText' => '<h3>Copying Code Updates Into Place<br></h3>I like to keep my repositories connected to GitHub in a separate directory from the full Laravel installation, etc. So I keep a shell script handy to copy updates from my working directory to the local virtual server, e.g. <i>repopush.sh</i>:<br><pre>$ #!/bin/bash
 set -x
-cp -r ~/repos/survloop/src ~/homestead/code/survloop/vendor/wikiworldorder/survloop/
-cp -r ~/repos/survlooporg/src ~/homestead/code/survloop/vendor/wikiworldorder/survlooporg/
+cp -r ~/repos/survloop/src ~/homestead/code/survloop/vendor/rockhopsoft/survloop/
+cp -r ~/repos/survlooporg/src ~/homestead/code/survloop/vendor/rockhopsoft/survlooporg/
 </pre><p>So each time I make edits to the code base, I run this script:</p><pre>sh ~/repos/repopush.sh</pre>',
 			'NodeOpts' => '89'
 		]);
@@ -3755,7 +3755,7 @@ cp -r ~/repos/survlooporg/src ~/homestead/code/survloop/vendor/wikiworldorder/su
 			'NodeParentID' => '2769',
 			'NodeType' => 'Instructions',
 			'NodePromptText' => '<p><h2 class="slBlueDark">How To Install SurvLoop with Docker<nobr></nobr></h2>
-<h3 class="dropdown-item">This process currently relies on <a href="https://laradock.io/" target="_blank">Laradock</a></h3><p>But I would love some help creating a proper Dockerfile, etc. This is as far as I got: <a href="https://github.com/flexyourrights/docker-openpolice/" target="_blank">https://github.com/flexyourrights/docker-openpolice/</a><br></p><hr>The following instructions are copied from <a href="https://github.com/wikiworldorder/survloop" target="_blank">github.com/wikiworldorder/survloop</a>.</p><p>First, <a href="https://www.docker.com/get-started" target="_blank">install Docker</a> on Mac, Windows, or an online server. 
+<h3 class="dropdown-item">This process currently relies on <a href="https://laradock.io/" target="_blank">Laradock</a></h3><p>But I would love some help creating a proper Dockerfile, etc. This is as far as I got: <a href="https://github.com/flexyourrights/docker-openpolice/" target="_blank">https://github.com/flexyourrights/docker-openpolice/</a><br></p><hr>The following instructions are copied from <a href="https://github.com/rockhopsoft/survloop" target="_blank">github.com/rockhopsoft/survloop</a>.</p><p>First, <a href="https://www.docker.com/get-started" target="_blank">install Docker</a> on Mac, Windows, or an online server. 
 Then grab a copy of Laravel (last tested with v5.8.3)...
 <pre>$ git clone https://github.com/laravel/laravel.git survloop
 $ cd survloop
@@ -4636,65 +4636,65 @@ sites:
 		<div class="pL20">
 			<ul>
 				<li>
-					<b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeNodeSurv.php" target="_blank">Tree/TreeNodeSurv</a></b>
+					<b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeNodeSurv.php" target="_blank">Tree/TreeNodeSurv</a></b>
 					<ul>
-						<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeNodeCore.php" target="_blank">Tree/TreeNodeCore</a></li>
+						<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeNodeCore.php" target="_blank">Tree/TreeNodeCore</a></li>
 					</ul>
 				</li>
 				<li>
-					<b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvAdmin.php" target="_blank">Tree/TreeSurvAdmin</a></b>
+					<b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvAdmin.php" target="_blank">Tree/TreeSurvAdmin</a></b>
 					<ul>
-						<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvNodeEdit.php" target="_blank">Tree/TreeSurvNodeEdit</a>
+						<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvNodeEdit.php" target="_blank">Tree/TreeSurvNodeEdit</a>
 						
 							<ul>
-								<li>extends <b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvForm.php" target="_blank">Tree/TreeSurvForm</a></b>
+								<li>extends <b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvForm.php" target="_blank">Tree/TreeSurvForm</a></b>
 								
 									<ul>
-										<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvFormUtils.php" target="_blank">Tree/TreeSurvFormUtils</a>
+										<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvFormUtils.php" target="_blank">Tree/TreeSurvFormUtils</a>
 										
 											<ul>
-												<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvFormLoops.php" target="_blank">Tree/TreeSurvFormLoops</a>
+												<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvFormLoops.php" target="_blank">Tree/TreeSurvFormLoops</a>
 												
 													<ul>
-														<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvFormVarieties.php" target="_blank">Tree/TreeSurvFormVarieties</a>
+														<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvFormVarieties.php" target="_blank">Tree/TreeSurvFormVarieties</a>
 														
 															<ul>
-																<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/UserProfile.php" target="_blank">Tree/UserProfile</a>
+																<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/UserProfile.php" target="_blank">Tree/UserProfile</a>
 																
 																	<ul>
-																		<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvInput.php" target="_blank">Tree/TreeSurvInput</a>
+																		<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvInput.php" target="_blank">Tree/TreeSurvInput</a>
 																		
 																			<ul>
-																				<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvUpload.php" target="_blank">Tree/TreeSurvUpload</a>
+																				<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvUpload.php" target="_blank">Tree/TreeSurvUpload</a>
 																				
 																					<ul>
-																						<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurv.php" target="_blank">Tree/TreeSurv</a>
+																						<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurv.php" target="_blank">Tree/TreeSurv</a>
 																						
 																							<ul>
-																								<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvReport.php" target="_blank">Tree/TreeSurvReport</a>
+																								<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvReport.php" target="_blank">Tree/TreeSurvReport</a>
 																								
 																									<ul>
-																										<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvBasicNav.php" target="_blank">Tree/TreeSurvBasicNav</a>
+																										<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvBasicNav.php" target="_blank">Tree/TreeSurvBasicNav</a>
 																										
 																											<ul>
-																												<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvProgBar.php" target="_blank">Tree/TreeSurvProgBar</a>
+																												<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvProgBar.php" target="_blank">Tree/TreeSurvProgBar</a>
 																												
 																													<ul>
-																														<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvLoad.php" target="_blank">Tree/TreeSurvLoad</a>																														
+																														<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvLoad.php" target="_blank">Tree/TreeSurvLoad</a>																														
 																															<ul>
-																																<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvConds.php" target="_blank">Tree/TreeSurvConds</a>
+																																<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvConds.php" target="_blank">Tree/TreeSurvConds</a>
 																																
 																																	<ul>
-																																		<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvAPI.php" target="_blank">Tree/TreeSurvAPI</a>
+																																		<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvAPI.php" target="_blank">Tree/TreeSurvAPI</a>
 																																		
 																																			<ul>
-																																				<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeCoreSess.php" target="_blank">Tree/TreeCoreSess</a>
+																																				<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeCoreSess.php" target="_blank">Tree/TreeCoreSess</a>
 																																				
 																																					<ul>
-																																						<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeCore.php" target="_blank">Tree/TreeCore</a>
+																																						<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeCore.php" target="_blank">Tree/TreeCore</a>
 																																						
 																																							<ul>
-																																								<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/SurvLoopController.php" target="_blank">SurvLoopController</a></li>
+																																								<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/SurvLoopController.php" target="_blank">SurvLoopController</a></li>
 																																							</ul>
 																																						</li>
 																																					</ul>
@@ -4703,10 +4703,10 @@ sites:
 																																		</li>
 																																	</ul>
 																																</li>
-																																<li>instantiates <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/SurvData.php" target="_blank">Tree/SurvData</a>
+																																<li>instantiates <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/SurvData.php" target="_blank">Tree/SurvData</a>
 																																
 																																	<ul>
-																																		<li>instantiates <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/SurvDataTestsAB.php" target="_blank">SurvDataTestsAB</a></li>
+																																		<li>instantiates <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/SurvDataTestsAB.php" target="_blank">SurvDataTestsAB</a></li>
 																																	</ul>
 																																</li>
 																															</ul>
@@ -4749,21 +4749,21 @@ sites:
 			<div class="pL20">
 				<ul>
 					<li>
-						<b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Stats/SurvStatsGraph.php" target="_blank">Stats/SurvStatsGraph</a></b>
+						<b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Stats/SurvStatsGraph.php" target="_blank">Stats/SurvStatsGraph</a></b>
 						<ul>
-							<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Stats/SurvStatsChart.php" target="_blank">Stats/SurvStatsChart</a>
+							<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Stats/SurvStatsChart.php" target="_blank">Stats/SurvStatsChart</a>
 							
 								<ul>
-									<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Stats/SurvStats.php" target="_blank">Stats/SurvStats</a>
+									<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Stats/SurvStats.php" target="_blank">Stats/SurvStats</a>
 									
 										<ul>
-											<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Stats/SurvStatsCache.php" target="_blank">Stats/SurvStatsCache</a>
+											<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Stats/SurvStatsCache.php" target="_blank">Stats/SurvStatsCache</a>
 											
 												<ul>
-													<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Stats/SurvStatsFilts.php" target="_blank">Stats/SurvStatsFilts</a>
+													<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Stats/SurvStatsFilts.php" target="_blank">Stats/SurvStatsFilts</a>
 													
 														<ul>
-															<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Stats/SurvStatsCore.php" target="_blank">Stats/SurvStatsCore</a></li>
+															<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Stats/SurvStatsCore.php" target="_blank">Stats/SurvStatsCore</a></li>
 														</ul>
 													</li>
 												</ul>
@@ -4775,9 +4775,9 @@ sites:
 						</ul>
 					</li>
 					<li>
-						<b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Stats/SurvTrends.php" target="_blank">S</a></b><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Stats/SurvTrends.php" target="_blank">tats/SurvTrends</a></b>
+						<b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Stats/SurvTrends.php" target="_blank">S</a></b><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Stats/SurvTrends.php" target="_blank">tats/SurvTrends</a></b>
 						<ul>
-							<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Stats/SurvStatsCore.php" target="_blank">Stats/SurvStatsCore</a></li>
+							<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Stats/SurvStatsCore.php" target="_blank">Stats/SurvStatsCore</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -4801,16 +4801,16 @@ don\'t need to load in the main trunks.</p><p>I am also of course welcome to mig
 			
 			<hr>
 			
-			<p><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/SurvLoopController.php" target="_blank" class="slBlueDark"><b>SurvLoopController</b></a></p>
+			<p><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/SurvLoopController.php" target="_blank" class="slBlueDark"><b>SurvLoopController</b></a></p>
 			<div class="pL20"><ul><li>instantiates 
 				
-					<a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Searcher.php" target="_blank"><b>Searcher</b></a>
+					<a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Searcher.php" target="_blank"><b>Searcher</b></a>
 				</li><li>instantiates 
 				
-					<a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/Globals.php" target="_blank"><b>Globals</b></a>
+					<a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/Globals.php" target="_blank"><b>Globals</b></a>
 				</li><li>instantiates 
 				
-				   <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvForm.php" target="_blank"><b>Tree Trunk</b> (client or TreeSurvForm)</a>
+				   <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvForm.php" target="_blank"><b>Tree Trunk</b> (client or TreeSurvForm)</a>
 			
 				</li><li>extends Controller</li></ul></div>'
 		]);
@@ -4829,33 +4829,33 @@ don\'t need to load in the main trunks.</p><p>I am also of course welcome to mig
 <div class="pL20">
 	<ul>
 	<li>
-		<b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/SurvLoop.php" target="_blank">SurvLoop.php</a></b>
-		<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/SurvCustLoop.php" target="_blank">SurvCustLoop</a>
-			<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/PageLoadUtils.php" target="_blank">PageLoadUtils</a></li></ul>
+		<b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/SurvLoop.php" target="_blank">SurvLoop.php</a></b>
+		<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/SurvCustLoop.php" target="_blank">SurvCustLoop</a>
+			<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/PageLoadUtils.php" target="_blank">PageLoadUtils</a></li></ul>
 		</li></ul>
 	</li><li>
-		<b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Admin/AdminController.php" target="_blank">Admin/AdminController</a></b>
+		<b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Admin/AdminController.php" target="_blank">Admin/AdminController</a></b>
 		<ul>
-			<li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Admin/AdminEmailController.php" target="_blank">Admin/AdminEmailController</a>
-				<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Admin/AdminCoreController.php" target="_blank">Admin/AdminCoreController</a>
-					<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/SurvLoopController.php" target="_blank">SurvLoopController</a></li></ul>
+			<li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Admin/AdminEmailController.php" target="_blank">Admin/AdminEmailController</a>
+				<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Admin/AdminCoreController.php" target="_blank">Admin/AdminCoreController</a>
+					<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/SurvLoopController.php" target="_blank">SurvLoopController</a></li></ul>
 				</li></ul>
 			</li>
-			<li>instantiates <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/PageLoadUtils.php" target="_blank">PageLoadUtils</a></li>
+			<li>instantiates <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/PageLoadUtils.php" target="_blank">PageLoadUtils</a></li>
 		</ul>
 	</li><li>
-		<a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Admin/AdminDatabaseInstall.php" target="_blank">Admin/AdminDatabaseInstall</a>
-		<ul><li>extended by <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Admin/AdminDBController.php" target="_blank">Admin/AdminDBController</a>
-			<ul><li>extended by <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Admin/AdminController.php" target="_blank">Admin/AdminController</a></li></ul>
+		<a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Admin/AdminDatabaseInstall.php" target="_blank">Admin/AdminDatabaseInstall</a>
+		<ul><li>extended by <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Admin/AdminDBController.php" target="_blank">Admin/AdminDBController</a>
+			<ul><li>extended by <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Admin/AdminController.php" target="_blank">Admin/AdminController</a></li></ul>
 		</li></ul>
 	</li><li>
-		<a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Admin/AdminTreeController.php" target="_blank">Admin/AdminTreeController</a>
-		<ul><li>extended by <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Admin/AdminController.php" target="_blank">Admin/AdminController</a></li><li>instantiates <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvAdmin.php" target="_blank">Tree/TreeSurvAdmin</a></li></ul>
+		<a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Admin/AdminTreeController.php" target="_blank">Admin/AdminTreeController</a>
+		<ul><li>extended by <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Admin/AdminController.php" target="_blank">Admin/AdminController</a></li><li>instantiates <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvAdmin.php" target="_blank">Tree/TreeSurvAdmin</a></li></ul>
 	</li>
 	</ul>
 </div>
-<p>Down the line, I hope to replace <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/AdminDBController.php" target="_blank">AdminDBController</a> and 
-<a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/AdminTreeController.php" target="_blank">AdminTreeController</a> with admin-only SurvLoop-generated forms. And all 
+<p>Down the line, I hope to replace <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/AdminDBController.php" target="_blank">AdminDBController</a> and 
+<a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/AdminTreeController.php" target="_blank">AdminTreeController</a> with admin-only SurvLoop-generated forms. And all 
 other admin tools.</p>
 
 <hr>
@@ -4868,23 +4868,23 @@ $GLOBALS["SL"] and primarily provides lookups and tools to be accessible
 	</p>
 	<div class="pL20">
 		<ul><li>
-				<b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/Globals.php" target="_blank">G</a></b><b><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/Globals.php" target="_blank">lobals</a></b>
-				<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">Globals/GlobalsImportExport</a>
+				<b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/Globals.php" target="_blank">G</a></b><b><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/Globals.php" target="_blank">lobals</a></b>
+				<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">Globals/GlobalsImportExport</a>
 					
-						<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsTables.php" target="_blank">G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsTables.php" target="_blank">lobalsTables</a>
-								<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsElements.php" target="_blank">G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsElements.php" target="_blank">lobalsElements</a>
-									<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsCache.php" target="_blank">G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsCache.php" target="_blank">lobalsCache</a>
-										<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsBasic.php" target="_blank">G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsBasic.php" target="_blank">lobalsBasic</a>
-											<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsVars.php" target="_blank">G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsVars.php" target="_blank">lobalsVars</a>
-												<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GlobalsStatic.php" target="_blank">GlobalsStatic</a></li></ul>
+						<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsTables.php" target="_blank">G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsTables.php" target="_blank">lobalsTables</a>
+								<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsElements.php" target="_blank">G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsElements.php" target="_blank">lobalsElements</a>
+									<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsCache.php" target="_blank">G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsCache.php" target="_blank">lobalsCache</a>
+										<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsBasic.php" target="_blank">G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsBasic.php" target="_blank">lobalsBasic</a>
+											<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsVars.php" target="_blank">G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsImportExport.php" target="_blank">lobals/G</a><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsVars.php" target="_blank">lobalsVars</a>
+												<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GlobalsStatic.php" target="_blank">GlobalsStatic</a></li></ul>
 												</li></ul>
 											</li></ul>
 										</li></ul>
 									</li></ul>
 							</li></ul>
-					</li><li>instantiates <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/Geographs.php" target="_blank">Geographs</a>
-						<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GeographyLookups.php" target="_blank">GeographyLookups</a>
-							<ul><li>extends <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Globals/GeographyLists.php" target="_blank">GeographyLists</a></li></ul>
+					</li><li>instantiates <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/Geographs.php" target="_blank">Geographs</a>
+						<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GeographyLookups.php" target="_blank">GeographyLookups</a>
+							<ul><li>extends <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Globals/GeographyLists.php" target="_blank">GeographyLists</a></li></ul>
 							</li></ul>
 					</li></ul>
 			</li></ul>
@@ -5016,7 +5016,7 @@ $GLOBALS["SL"] and primarily provides lookups and tools to be accessible
 <p>When you loaded this page, the server asks Laravel what to give you. During installation, the SurvLoopServiceProvider taught it to check the file:</p><pre>/survloop/src/Routes/routes.php</pre><p>...which includes routes-slug.php, and will find a match here:</p><pre>Route::get( 
     \'/{pageSlug}\',
     $path . \'SurvLoop@loadPageURL\'
-);</pre><p>This points to the class <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/SurvLoop.php" target="_blank">SurvLoop\Controllers\SurvLoop, found in the file /survloop/src/Controllers/SurvLoop.php</a>.</p><p>The function is also named in the route, which always receives the <a href="https://laravel.com/api/5.8/Illuminate/Http/Request.html" target="_blank">Request</a> with GET, POST parameters, and more. In this case, only one more parameter is passed in as "common-code-routes-and-paths":<br></p><pre>...<br>public function loadPageURL(Request $request, $pageSlug = \'\', $cid = 0, $view = \'\', $skipPublic = false)<br>{<br>    $redir = $this-&gt;chkPageRedir($pageSlug);<br>    if ($redir != $pageSlug) {<br>        redirect($redir, 301);<br>    }<br>    if ($this-&gt;loadTreeBySlug($request, $pageSlug, \'Page\')) {<br>        $this-&gt;loadLoop($request);<br>...<br></pre><p>This function first checks to see if this URL slug matches a redirect. If not, it will call other functions to find this page\'s slug in the SL_Trees table of the database, and check access permissions. </p><p>But whatever happens, this function returns this page back to you, the site visitor.<br></p>',
+);</pre><p>This points to the class <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/SurvLoop.php" target="_blank">SurvLoop\Controllers\SurvLoop, found in the file /survloop/src/Controllers/SurvLoop.php</a>.</p><p>The function is also named in the route, which always receives the <a href="https://laravel.com/api/5.8/Illuminate/Http/Request.html" target="_blank">Request</a> with GET, POST parameters, and more. In this case, only one more parameter is passed in as "common-code-routes-and-paths":<br></p><pre>...<br>public function loadPageURL(Request $request, $pageSlug = \'\', $cid = 0, $view = \'\', $skipPublic = false)<br>{<br>    $redir = $this-&gt;chkPageRedir($pageSlug);<br>    if ($redir != $pageSlug) {<br>        redirect($redir, 301);<br>    }<br>    if ($this-&gt;loadTreeBySlug($request, $pageSlug, \'Page\')) {<br>        $this-&gt;loadLoop($request);<br>...<br></pre><p>This function first checks to see if this URL slug matches a redirect. If not, it will call other functions to find this page\'s slug in the SL_Trees table of the database, and check access permissions. </p><p>But whatever happens, this function returns this page back to you, the site visitor.<br></p>',
 			'NodeOpts' => '89'
 		]);
 		DB::table('SL_Node')->insert([
@@ -5043,9 +5043,9 @@ $GLOBALS["SL"] and primarily provides lookups and tools to be accessible
         }
     }<br>    eval("\$this-&gt;custLoop = new " . $class . "("<br>        . "\$request, "<br>        . "-3, "<br>        . $this-&gt;dbID . ", "<br>        . $this-&gt;treeID . ", "<br>        . (($skipSessLoad) ? "true" : "false") <br>        . ");"<br>    );
     return true;
-}</pre><p>It finds it at <a href="https://github.com/wikiworldorder/survlooporg/blob/master/src/Controllers/SurvLoopOrg.php" target="_blank">/survlooporg/src/Controllers/SurvLoopOrg.php</a>, which extends <a href="/package-files-folders-classes#n3074" target="_blank">SurvLoop\Controllers\Tree\TreeSurvForm</a>. It loads this <a href="/package-files-folders-classes#n3074" target="_blank">primary Tree Trunk</a> of the code base, with customizable extensions, passing in the page\'s Tree ID and the Database ID (1). </p><div class="alert alert-info fade in alert-dismissible show" style="padding: 10px 15px;">Currently, the Database ID is almost always #1, representing the primary client/installation-specific database. Database ID #3 is reserved for the database design of the SurvLoop engine itself (meta).<br></div><p>Next in <i>loadPageURL</i>, we check for a cache of this page (because it is a simple one without dynamic content). Odds are that you got the cache this page load. Good for you!</p><p>But that cache was created on-demand from another visitor\'s page load, where it called <a href="/package-files-folders-classes#n3074" target="_blank">The Tree Trunk</a>\'s <i>index</i> function:</p><pre>$this-&gt;pageContent = $this-&gt;custLoop-&gt;index($request);</pre><p>...which starts diving in closer to meat and potatoes of the branching tree managed by <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurv.php" target="_blank">TreeSurv.php</a>.</p><pre>public function index(Request $request, $type = \'\', $val = \'\')
+}</pre><p>It finds it at <a href="https://github.com/rockhopsoft/survlooporg/blob/master/src/Controllers/SurvLoopOrg.php" target="_blank">/survlooporg/src/Controllers/SurvLoopOrg.php</a>, which extends <a href="/package-files-folders-classes#n3074" target="_blank">SurvLoop\Controllers\Tree\TreeSurvForm</a>. It loads this <a href="/package-files-folders-classes#n3074" target="_blank">primary Tree Trunk</a> of the code base, with customizable extensions, passing in the page\'s Tree ID and the Database ID (1). </p><div class="alert alert-info fade in alert-dismissible show" style="padding: 10px 15px;">Currently, the Database ID is almost always #1, representing the primary client/installation-specific database. Database ID #3 is reserved for the database design of the SurvLoop engine itself (meta).<br></div><p>Next in <i>loadPageURL</i>, we check for a cache of this page (because it is a simple one without dynamic content). Odds are that you got the cache this page load. Good for you!</p><p>But that cache was created on-demand from another visitor\'s page load, where it called <a href="/package-files-folders-classes#n3074" target="_blank">The Tree Trunk</a>\'s <i>index</i> function:</p><pre>$this-&gt;pageContent = $this-&gt;custLoop-&gt;index($request);</pre><p>...which starts diving in closer to meat and potatoes of the branching tree managed by <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurv.php" target="_blank">TreeSurv.php</a>.</p><pre>public function index(Request $request, $type = \'\', $val = \'\')
 {
-    $this-&gt;survLoopInit($request, \'\');<br>    ...<br>    $this-&gt;v["content"] = $this-&gt;printTreePublic(); <br>    ...</pre><p>The <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/SurvLoopController.php" target="_blank"><i>survLoopInit</i> function is found in the root level SurvLoopController</a>, and initializes data related to the current user, potentially relevant page load variables, and site navigation. <b>It also makes a call to <i>initExtra($request)</i>. This can be written in the client extension <a href="https://github.com/wikiworldorder/survlooporg/blob/master/src/Controllers/SurvLoopOrg.php" target="_blank">SurvLoopOrg.php</a> </b><b>to inject any additional initialization needed.</b></p><p>The <i>printTreePublic</i> function will traverse the Page Tree\'s branching nodes and call <i>printNodePublic</i> for each (also in <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurv.php" target="_blank">TreeSurv.php</a>), compiling a finished output as it goes. Much of this engine\'s power executes within this traversal. <br></p><p>Back in the <i>index</i> function, the main page content has now been fully loaded into a variable of <a href="/package-files-folders-classes#n3074" target="_blank">The Tree Trunk</a>, $this-&gt;v, which is primarily used for data that needs to be passed into <a href="https://github.com/wikiworldorder/survloop/tree/master/src/Views" target="_blank">Views</a>. </p>The main body content is scraped once more for Javascript and CSS, to be consolidated and minified in separate resource files. Finally, it is pumped into <a href="https://github.com/wikiworldorder/survloop/blob/master/src/Views/master.blade.php" target="_blank">the highest-level master View with the HTML for general site structure, navigation layout, etc</a>.<br><pre>...<br>$this-&gt;v["content"] = $GLOBALS["SL"]-&gt;pullPageJsCss(
+    $this-&gt;survLoopInit($request, \'\');<br>    ...<br>    $this-&gt;v["content"] = $this-&gt;printTreePublic(); <br>    ...</pre><p>The <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/SurvLoopController.php" target="_blank"><i>survLoopInit</i> function is found in the root level SurvLoopController</a>, and initializes data related to the current user, potentially relevant page load variables, and site navigation. <b>It also makes a call to <i>initExtra($request)</i>. This can be written in the client extension <a href="https://github.com/rockhopsoft/survlooporg/blob/master/src/Controllers/SurvLoopOrg.php" target="_blank">SurvLoopOrg.php</a> </b><b>to inject any additional initialization needed.</b></p><p>The <i>printTreePublic</i> function will traverse the Page Tree\'s branching nodes and call <i>printNodePublic</i> for each (also in <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurv.php" target="_blank">TreeSurv.php</a>), compiling a finished output as it goes. Much of this engine\'s power executes within this traversal. <br></p><p>Back in the <i>index</i> function, the main page content has now been fully loaded into a variable of <a href="/package-files-folders-classes#n3074" target="_blank">The Tree Trunk</a>, $this-&gt;v, which is primarily used for data that needs to be passed into <a href="https://github.com/rockhopsoft/survloop/tree/master/src/Views" target="_blank">Views</a>. </p>The main body content is scraped once more for Javascript and CSS, to be consolidated and minified in separate resource files. Finally, it is pumped into <a href="https://github.com/rockhopsoft/survloop/blob/master/src/Views/master.blade.php" target="_blank">the highest-level master View with the HTML for general site structure, navigation layout, etc</a>.<br><pre>...<br>$this-&gt;v["content"] = $GLOBALS["SL"]-&gt;pullPageJsCss(
     $this-&gt;v["content"], 
     $this-&gt;coreID
 );<br>...<br>return $GLOBALS["SL"]-&gt;swapSessMsg(<br>    view(\'vendor.survloop.master\', $this-&gt;v)-&gt;render()<br>);<br></pre><p>Finally, we have generated the full HTML, JS, and CSS for this page. Since this is a simple static page, it is cached, but for only the current viewer\'s permission level.<br></p>',
@@ -5066,7 +5066,7 @@ hard-coded in the SurvLoopOrg package. This process is shared by many other node
         return $this-&gt;printDocumentationNav($nID);
     }
     return \'\';
-}</pre><p>Within the <i><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvForm.php" target="_blank">printNodePublic </a></i><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvForm.php" target="_blank">function mentioned above, there is a check for customization function called </a><i><a href="https://github.com/wikiworldorder/survloop/blob/master/src/Controllers/Tree/TreeSurvForm.php" target="_blank">customNodePrint</a></i>. By creating this function in the client/installation package, a developer can bust out as much complexity as they like.</p><p>Surveys make use of a parallel function, <i>postNodePublicCustom</i>, to customize how user responses are stored in the database, when a page within Survey is submitted.<br></p>',
+}</pre><p>Within the <i><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvForm.php" target="_blank">printNodePublic </a></i><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvForm.php" target="_blank">function mentioned above, there is a check for customization function called </a><i><a href="https://github.com/rockhopsoft/survloop/blob/master/src/Controllers/Tree/TreeSurvForm.php" target="_blank">customNodePrint</a></i>. By creating this function in the client/installation package, a developer can bust out as much complexity as they like.</p><p>Surveys make use of a parallel function, <i>postNodePublicCustom</i>, to customize how user responses are stored in the database, when a page within Survey is submitted.<br></p>',
 			'NodeOpts' => '89'
 		]);
 		DB::table('SL_Node')->insert([
