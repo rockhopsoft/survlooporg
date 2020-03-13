@@ -4,7 +4,7 @@
   *
   * SurvLoop.org
   * @package  rockhopsoft/survlooporg
-  * @author  Morgan Lesko <wikiworldorder@protonmail.com>
+  * @author  Morgan Lesko <rockhoppers@runbox.com>
   * @since 0.0
   */
 namespace SurvLoopOrg\Controllers;

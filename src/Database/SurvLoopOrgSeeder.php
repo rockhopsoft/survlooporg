@@ -2678,7 +2678,7 @@ printDocumentationNav, to view survlooporg.inc-documentation-navigation<br>'
 ...
 \'aliases\' =&gt; [
 	...
-	\'SurvLoop\' =&gt; \'WikiWorldOrder\SurvLoop\SurvLoopFacade\',
+	\'SurvLoop\' =&gt; \'RockHopSoft\SurvLoop\SurvLoopFacade\',
 	...
 ], ...
 </pre>
@@ -3160,7 +3160,7 @@ survlooporg.inc-documentation-navigation</span>'
 			'NodePromptText' => '<h2 class="slBlueDark">How To Install SurvLoop with Docker on <nobr>Ubuntu 18.04</nobr></h2>
 <p>This process runs a variety of <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose" target="_blank">Digital Ocean\'s layered tutorials</a>. I don\'t understand all of it yet, so will leave the explanations to their superb articles. This variation adds SurvLoop stuff, and hopes to skip the learning curve for those uninterested in those layers of the stack. You should be able to accept the defaults, but I do update to the latest version of OpenSSH.</p>
 <p>After starting up a new <b class="red">Ubuntu 18.04</b> Droplet, connect it with the root account and your SSH key. The first install script will create a non-root user, e.g. <span class="red">survuser</span>. Be sure to create and save a copy of a strong password:</p>
-<pre>$ git clone https://github.com/wikiworldorder/docker-survloop.git /tmp/docker-survloop
+<pre>$ git clone https://github.com/rockhopsoft/docker-survloop.git /tmp/docker-survloop
 $ mkdir /usr/local/bin/docker-survloop
 $ cp /tmp/docker-survloop/bin/*.* /usr/local/bin/docker-survloop
 $ chmod u+x /usr/local/bin/docker-survloop/*.*
@@ -3780,7 +3780,7 @@ Password: secret
 </pre>
 <p>Finally, enter Laradock\'s workspace container to download and run the Open Police installation script.
 </p><pre>$ docker-compose exec workspace bash
-# git clone https://github.com/wikiworldorder/docker-survloop.git
+# git clone https://github.com/rockhopsoft/docker-survloop.git
 # chmod +x ./docker-survloop/bin/*.sh
 # ./docker-survloop/bin/survloop-laradock-postinstall.sh
 </pre>
@@ -4913,7 +4913,7 @@ $GLOBALS["SL"] and primarily provides lookups and tools to be accessible
 			'NodeParentID' => '2655',
 			'NodeType' => 'Instructions',
 			'NodePromptText' => '<h2>Suggested SurvLoop Developer Work Flows</h2>
-<p>First, my first few projects on GitHub haven\'t had much interaction yet, and I am new to the community. <a href="https://github.com/wikiworldorder" target="_blank">Please contact me</a> if you\'ve got any key changes I should focus on to better invite contributions. Constructive criticism is warmly welcome.</p>
+<p>First, my first few projects on GitHub haven\'t had much interaction yet, and I am new to the community. <a href="https://github.com/rockhopsoft" target="_blank">Please contact me</a> if you\'ve got any key changes I should focus on to better invite contributions. Constructive criticism is warmly welcome.</p>
 <iframe src="https://www.youtube.com/embed/iqbhtNdXhso" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="315" frameborder="0"></iframe>',
 			'NodeOpts' => '89'
 		]);
