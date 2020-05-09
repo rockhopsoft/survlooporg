@@ -35,14 +35,16 @@ class SurvLoopOrg extends TreeSurvForm
     }
     */
     
-    protected function customNodePrint($nID = -3, $tmpSubTier = [], $nIDtxt = '', $nSffx = '', $currVisib = 1)
+    protected function customNodePrint(&$curr = null)
     {
         $ret = '';
+        $nID = $curr->nID;
+        $docuNavs = [641, 2386, 441, 759, 999, 1081, 1793, 2281, 2681, 3088, 3099];
         if ($nID == 77) {
             $ret .= $this->gatherInstallStatTbl1($nID);
         } elseif ($nID == 81) {
             $ret .= $this->gatherInstallStatTbl2($nID);
-        } elseif (in_array($nID, [641, 2386, 441, 759, 999, 1081, 1793, 2281, 2681, 3088, 3099])) {
+        } elseif (in_array($nID, $docuNavs)) {
             $ret .= $this->printDocumentationNav($nID);
         }
         return $ret;
@@ -56,13 +58,13 @@ class SurvLoopOrg extends TreeSurvForm
         return $curr;
     }
     
-    protected function postNodePublicCustom($nID = -3, $nIDtxt = '', $tmpSubTier = [])
+    protected function postNodePublicCustom(&$curr)
     { 
         if (empty($tmpSubTier)) {
-            $tmpSubTier = $this->loadNodeSubTier($nID);
+            $tmpSubTier = $this->loadNodeSubTier($curr->nID);
         }
-        list($tbl, $fld) = $this->allNodes[$nID]->getTblFld();
-        if ($nID == 37) {
+        list($curr->tbl, $curr->fld) = $this->allNodes[$curr->nID]->getTblFld();
+        if ($curr->nID == 37) {
             
         }
         return false; // false to continue standard post processing
@@ -77,12 +79,12 @@ class SurvLoopOrg extends TreeSurvForm
     }
     
     // returns an array of overrides for ($currNodeSessionData, ???... 
-    protected function printNodeSessDataOverride($nID = -3, $tmpSubTier = [], $nIDtxt = '', $currNodeSessionData = '')
+    protected function printNodeSessDataOverride(&$curr)
     {
         if (sizeof($this->sessData->dataSets) == 0) {
             return [];
         }
-        if ($nID == 37) {
+        if ($curr->nID == 37) {
             
         }
         return [];
