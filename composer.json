@@ -18,17 +18,16 @@
         {
             "name": "Morgan Lesko",
             "homepage": "https://github.com/rockhopsoft/survlooporg",
-            "email": "mo@wikiworldorder.org",
+            "email": "rockhoppers@runbox.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "rockhopsoft/survloop": "*@dev"
+        "rockhopsoft/survloop": "^0.2.*"
     },
     "autoload": {
         "psr-4": {
-            "SurvLoopOrg\\": "src/",
-            "SurvLoopOrg\\Models\\": "storage/app/models/survlooporg"
+            "SurvLoopOrg\\": "src/"
         }
     },
     "extra": {

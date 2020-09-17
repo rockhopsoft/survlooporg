@@ -1,8 +1,11 @@
 <?php 
 // generated from /resources/views/vendor/survloop/admin/db/export-laravel-gen-seeder.blade.php
 
+use Auth;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class SLSeeder extends Seeder
 {

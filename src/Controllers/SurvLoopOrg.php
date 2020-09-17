@@ -120,8 +120,7 @@ class SurvLoopOrg extends TreeSurvForm
                     if (isset($i->inst_url) && trim($i->inst_url) != '') {
                         $stats = [];
                         if ($i->inst_id == 1) {
-                            $url = 'https://survloop.org/survloop-engine-stats.json';
-                            //$stats = json_decode(file_get_contents($url), TRUE);
+                            $stats = $GLOBALS["SL"]->getJsonSurvStats('rockhopsoft/survloop');
                         } else {
                             $file = $i->inst_url . '/survloop-stats.json';
                             $stats = json_decode(file_get_contents($file), TRUE);
@@ -135,10 +134,12 @@ class SurvLoopOrg extends TreeSurvForm
                                 $stat->inst_stat_install_id = $i->inst_id;
                             }
                             foreach ($stats as $fld => $val) {
-                                if ($fld == 'icon_url') {
-                                    $i->{ 'inst_' . $fld } = $val;
-                                } else {
-                                    $stat->{ 'inst_stat_' . $fld } = $val;
+                                if ($fld == strtolower($fld)) {
+                                    if ($fld == 'icon_url') {
+                                        $i->{ 'inst_' . $fld } = $val;
+                                    } else {
+                                        $stat->{ 'inst_stat_' . $fld } = $val;
+                                    }
                                 }
                             }
                             $stat->save();
@@ -294,15 +295,6 @@ class SurvLoopOrg extends TreeSurvForm
     protected function gatherInstallStatGraph($nID)
     {
     	return view('vendor.survlooporg.nodes.81-gather-install-stats-table2', $this->v)->render();
-    }
-    
-    public function engineJsonSurvStats(Request $request)
-    {
-        header('Content-Type: application/json');
-        $GLOBALS["SL"] = new Globals($request, 3, 3, 3);
-        $stats = $GLOBALS["SL"]->getJsonSurvLoopStats('rockhopsoft/survloop');
-    	echo json_encode($stats);
-        exit;
     }
     
     protected function printDocumentationNav($nID)

@@ -11,8 +11,7 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
-    
-    Route::get( '/survloop-engine-stats.json', 'SurvLoopOrg\\Controllers\\SurvLoopOrg@engineJsonSurvStats');
+
     
 });
 

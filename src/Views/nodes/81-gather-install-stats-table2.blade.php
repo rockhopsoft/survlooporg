@@ -21,8 +21,8 @@
             <b>{{ $inst->inst_name }}</b></a></nobr></th>
         <th> @if (isset($inst->inst_on_github)) <a href="{{ $inst->inst_on_github }}" target="_blank"
             ><i class="fa fa-github f16" aria-hidden="true"></i></a> @endif </th>
-        <td class="brdLft">{{ number_format($inst->inst_stat_code_lines_controllers) }}</td>
-        <td>{{ number_format($inst->inst_stat_code_lines_views) }}</td>
+        <td class="brdLft">{{ number_format($inst->inst_stat_lines_controllers) }}</td>
+        <td>{{ number_format($inst->inst_stat_lines_views) }}</td>
         <td class="brdLft">{{ $GLOBALS["SL"]->humanFilesize($inst->inst_stat_bytes_controllers, 1) }}</td>
         <td>{{ $GLOBALS["SL"]->humanFilesize($inst->inst_stat_bytes_database, 1) }}</td>
         <td>{{ $GLOBALS["SL"]->humanFilesize($inst->inst_stat_bytes_uploads, 1) }}</td>
