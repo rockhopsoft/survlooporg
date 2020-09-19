@@ -1,13 +1,18 @@
 <?php
 namespace SurvLoopOrg;
 
+use SurvLoopOrg\SurvLoopOrgFacade;
 use Illuminate\Support\ServiceProvider;
 
 class SurvLoopOrgServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        require __DIR__ . '/routes.php';
+        $this->app->bind('survlooporgfacade', function($app) {
+                return new SurvLoopOrgFacade();
+            });
+        }
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
         $this->publishes([
 
               __DIR__ . '/Views'   => base_path('resources/views/vendor/survlooporg'),
