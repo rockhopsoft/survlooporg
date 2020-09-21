@@ -1,6 +1,8 @@
 <?php 
 // generated from /resources/views/vendor/survloop/admin/db/export-laravel-gen-seeder.blade.php
 
+namespace Database\Seeders;
+
 use Auth;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
