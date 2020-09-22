@@ -1,25 +1,25 @@
 <?php
 /**
-  * SurvLoopOrgAdmin extends the SurvLoop admin umbrella.
+  * SurvloopOrgAdmin extends the Survloop admin umbrella.
   *
-  * SurvLoop.org
+  * Survloop.org
   * @package  rockhopsoft/survlooporg
   * @author  Morgan Lesko <rockhoppers@runbox.com>
   * @since 0.0
   */
-namespace SurvLoopOrg\Controllers;
+namespace SurvloopOrg\Controllers;
 
 use DB;
 use Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\SLDefinitions;
-use SurvLoopOrg\Controllers\SurvLoopOrg;
-use SurvLoop\Controllers\Admin\AdminSubsController;
+use SurvloopOrg\Controllers\SurvloopOrg;
+use Survloop\Controllers\Admin\AdminSubsController;
 
-class SurvLoopOrgAdmin extends AdminSubsController
+class SurvloopOrgAdmin extends AdminSubsController
 {
-    public $classExtension     = 'SurvLoopOrgAdmin';
+    public $classExtension     = 'SurvloopOrgAdmin';
     public $treeID             = 1;
     
     public function initPowerUser($uID = -3)
@@ -33,7 +33,7 @@ class SurvLoopOrgAdmin extends AdminSubsController
     
     protected function initExtra(Request $request)
     {
-        $this->custReport = new SurvLoopOrg($request);
+        $this->custReport = new SurvloopOrg($request);
         
         if (!isset($this->v["currPage"])) {
             $this->v["currPage"] = ['/dashboard', ''];

@@ -1,15 +1,15 @@
 <?php
-namespace SurvLoopOrg;
+namespace SurvloopOrg;
 
-use SurvLoopOrg\SurvLoopOrgFacade;
+use SurvloopOrg\SurvloopOrgFacade;
 use Illuminate\Support\ServiceProvider;
 
-class SurvLoopOrgServiceProvider extends ServiceProvider
+class SurvloopOrgServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         $this->app->bind('survlooporgfacade', function($app) {
-            return new SurvLoopOrgFacade();
+            return new SurvloopOrgFacade();
         });
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
         $dbMig = '2020_09_14_000000_create_survloop_installs_tables';
@@ -27,8 +27,8 @@ class SurvLoopOrgServiceProvider extends ServiceProvider
               __DIR__ . '/Database/' . $dbMig . '.php'
                   => base_path('database/migrations/' . $dbMig . '.php'),
 
-              __DIR__ .'/Database/SurvLoopOrgSeeder.php' 
-                  => base_path('database/seeders/SurvLoopOrgSeeder.php')
+              __DIR__ .'/Database/SurvloopOrgSeeder.php' 
+                  => base_path('database/seeders/SurvloopOrgSeeder.php')
                   
         ]);
     }

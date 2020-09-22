@@ -1,9 +1,9 @@
 {
     "name": "rockhopsoft/survlooporg",
-    "description": "SurvLoop is a Laravel-based engine for designing a database and creating a mobile-friendly user interface to fill it.",
+    "description": "Survloop is a Laravel-based engine for designing a database and creating a mobile-friendly user interface to fill it.",
     "keywords": [
     	"laravel", 
-    	"SurvLoop", 
+    	"Survloop", 
     	"survey", 
     	"database designer", 
     	"user experience", 
@@ -27,16 +27,16 @@
     },
     "autoload": {
         "psr-4": {
-            "SurvLoopOrg\\": "src/"
+            "SurvloopOrg\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "SurvLoopOrg\\SurvLoopOrgServiceProvider"
+                "SurvloopOrg\\SurvloopOrgServiceProvider"
             ],
             "aliases": {
-                "SurvLoopOrg": "SurvLoopOrg\\SurvLoopOrgFacade"
+                "SurvloopOrg": "SurvloopOrg\\SurvloopOrgFacade"
             }
         }
     }

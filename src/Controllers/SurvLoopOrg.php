@@ -1,13 +1,13 @@
 <?php
 /**
-  * SurvLoopOrg extends the SurvLoop main branching-tree engine.
+  * SurvloopOrg extends the Survloop main branching-tree engine.
   *
-  * SurvLoop.org
+  * Survloop.org
   * @package  rockhopsoft/survlooporg
   * @author  Morgan Lesko <rockhoppers@runbox.com>
   * @since 0.0
   */
-namespace SurvLoopOrg\Controllers;
+namespace SurvloopOrg\Controllers;
 
 use DB;
 use Auth;
@@ -16,10 +16,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\SLIInstallations;
 use App\Models\SLIInstallStats;
-use SurvLoop\Controllers\Globals\Globals;
-use SurvLoop\Controllers\Tree\TreeSurvForm;
+use Survloop\Controllers\Globals\Globals;
+use Survloop\Controllers\Tree\TreeSurvForm;
 
-class SurvLoopOrg extends TreeSurvForm
+class SurvloopOrg extends TreeSurvForm
 {
     /*
     // Initializing a bunch of things which are not [yet] automatically determined by the software
@@ -305,7 +305,7 @@ class SurvLoopOrg extends TreeSurvForm
                 [
                     [
                         '/how-to-install-survloop', 
-                        'Install SurvLoop'
+                        'Install Survloop'
                     ],[
                         '/how-to-install-laravel-on-an-ubuntu-server', 
                         'Install Laravel on Ubuntu Server'
@@ -316,11 +316,11 @@ class SurvLoopOrg extends TreeSurvForm
                 ]
             ],
             [
-                'SurvLoop Codebase Orientation',
+                'Survloop Codebase Orientation',
                 [
                     [
                         '/introduction-to-survloop-codebase', 
-                        'What Is SurvLoop?'
+                        'What Is Survloop?'
                     ],[
                         '/package-files-folders-classes', 
                         'Folders, Files, & Classes'

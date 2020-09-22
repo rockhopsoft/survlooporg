@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-# ******* Running SurvLoop.org Laradock Intaller *******
+# ******* Running Survloop.org Laradock Intaller *******
 
 cp .env.example .env
 sed -i 's/DB_HOST=127.0.0.1/DB_HOST=mysql/g' .env
@@ -12,13 +12,13 @@ composer install
 php artisan key:generate
 php artisan make:auth
 
-# Install SurvLoop & OpenPolice
+# Install Survloop & OpenPolice
 composer require rockhopsoft/survlooporg
 
 composer dump-autoload
 php artisan optimize
 
-# Install SurvLoop user model
+# Install Survloop user model
 #cp vendor/rockhopsoft/survloop/src/Models/User.php app/User.php
 #sed -i 's/namespace App\\Models;/namespace App;/g' app/User.php
 sed -i 's/App\\User::class/App\\Models\\User::class/g' config/auth.php
@@ -32,7 +32,7 @@ php artisan migrate
 php artisan optimize
 composer dump-autoload
 
-php artisan db:seed --class=SurvLoopSeeder
+php artisan db:seed --class=SurvloopSeeder
 php artisan db:seed --class=ZipCodeSeeder
 php artisan db:seed --class=OpenPoliceSeeder
 php artisan db:seed --class=OpenPoliceDeptSeeder

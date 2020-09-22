@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class SurvLoopOrgSeeder extends Seeder
+class SurvloopOrgSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -23,8 +23,8 @@ class SurvLoopOrgSeeder extends Seeder
 			'db_id' => 1,
 			'db_user' => '1',
 			'db_prefix' => 'sli_',
-			'db_name' => 'SurvLoop Installs',
-			'db_desc' => 'Who\'s Using SurvLoop?',
+			'db_name' => 'Survloop Installs',
+			'db_desc' => 'Who\'s Using Survloop?',
 			'db_tables' => '5',
 			'db_fields' => '43'
 		]);
@@ -34,7 +34,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'tbl_database' => '1',
 			'tbl_name' => 'users',
 			'tbl_eng' => 'Users',
-			'tbl_desc' => 'This represents the Laravel Users table, but will not actually be implemented by SurvLoop as part of the database installation.',
+			'tbl_desc' => 'This represents the Laravel Users table, but will not actually be implemented by Survloop as part of the database installation.',
 			'tbl_group' => 'Users',
 			'tbl_ord' => '15',
 			'tbl_num_foreign_in' => '2'
@@ -45,9 +45,9 @@ class SurvLoopOrgSeeder extends Seeder
 			'tbl_abbr' => 'inst_stat_',
 			'tbl_name' => 'install_stats',
 			'tbl_eng' => 'Install Stats',
-			'tbl_desc' => 'Each record preserves a snapshot of various statistics tracked for this SurvLoop installation.',
-			'tbl_notes' => 'Maybe auto-loadable via SurvLoop.php function getJsonSurvLoopStats()',
-			'tbl_group' => 'SurvLoop Installations',
+			'tbl_desc' => 'Each record preserves a snapshot of various statistics tracked for this Survloop installation.',
+			'tbl_notes' => 'Maybe auto-loadable via Survloop.php function getJsonSurvloopStats()',
+			'tbl_group' => 'Survloop Installations',
 			'tbl_num_fields' => '19',
 			'tbl_num_foreign_keys' => '1'
 		]);
@@ -58,7 +58,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'tbl_name' => 'requests',
 			'tbl_eng' => 'Open Data Requests',
 			'tbl_desc' => 'Each record represents a site visitor\'s request for some open data to be collected and shared with the world.',
-			'tbl_group' => 'SurvLoop Installations',
+			'tbl_group' => 'Survloop Installations',
 			'tbl_num_fields' => '11',
 			'tbl_num_foreign_keys' => '1',
 			'tbl_num_foreign_in' => '1'
@@ -71,7 +71,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'tbl_eng' => 'Open Data Request Skills',
 			'tbl_desc' => 'Each record associates one programming skill with one user who requested the open data. This allows many skills to be linked to one request.',
 			'tbl_type' => 'Subset',
-			'tbl_group' => 'SurvLoop Installations',
+			'tbl_group' => 'Survloop Installations',
 			'tbl_num_fields' => '2',
 			'tbl_num_foreign_keys' => '1'
 		]);
@@ -80,9 +80,9 @@ class SurvLoopOrgSeeder extends Seeder
 			'tbl_database' => '1',
 			'tbl_abbr' => 'inst_',
 			'tbl_name' => 'installations',
-			'tbl_eng' => 'SurvLoop Installations',
-			'tbl_desc' => 'This represents each website or system which is currently powered by SurvLoop.',
-			'tbl_group' => 'SurvLoop Installations',
+			'tbl_eng' => 'Survloop Installations',
+			'tbl_desc' => 'This represents each website or system which is currently powered by Survloop.',
+			'tbl_group' => 'Survloop Installations',
 			'tbl_num_fields' => '11',
 			'tbl_num_foreign_keys' => '1',
 			'tbl_num_foreign_in' => '1'
@@ -95,7 +95,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'fld_spec_source' => '0',
 			'fld_name' => 'name',
 			'fld_eng' => 'System Name',
-			'fld_desc' => 'Indicates the plain name of the system which is powered by SurvLoop.',
+			'fld_desc' => 'Indicates the plain name of the system which is powered by Survloop.',
 			'fld_foreign_min' => 'N',
 			'fld_foreign_max' => 'N',
 			'fld_foreign2_min' => 'N',
@@ -114,7 +114,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'fld_spec_source' => '0',
 			'fld_name' => 'url',
 			'fld_eng' => 'System URL',
-			'fld_desc' => 'Indicates the URL of the system which is powered by SurvLoop.',
+			'fld_desc' => 'Indicates the URL of the system which is powered by Survloop.',
 			'fld_foreign_min' => 'N',
 			'fld_foreign_max' => 'N',
 			'fld_foreign2_min' => 'N',
@@ -133,7 +133,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'fld_spec_source' => '0',
 			'fld_name' => 'desc',
 			'fld_eng' => 'System Description',
-			'fld_desc' => 'Describes the system which is powered by SurvLoop.',
+			'fld_desc' => 'Describes the system which is powered by Survloop.',
 			'fld_foreign_min' => 'N',
 			'fld_foreign_max' => 'N',
 			'fld_foreign2_min' => 'N',
@@ -276,7 +276,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'fld_spec_source' => '0',
 			'fld_name' => 'logo_url',
 			'fld_eng' => 'Logo Image URL',
-			'fld_desc' => 'Indicates the URL of this SurvLoop Installation\'s public location on the internet.',
+			'fld_desc' => 'Indicates the URL of this Survloop Installation\'s public location on the internet.',
 			'fld_foreign_min' => 'N',
 			'fld_foreign_max' => 'N',
 			'fld_foreign2_min' => 'N',
@@ -294,7 +294,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'fld_spec_source' => '0',
 			'fld_name' => 'install_id',
 			'fld_eng' => 'Installation ID',
-			'fld_desc' => 'Indicates the unique Installation ID number of the SurvLoop Installation associated with the statistics in this record.',
+			'fld_desc' => 'Indicates the unique Installation ID number of the Survloop Installation associated with the statistics in this record.',
 			'fld_foreign_table' => '29',
 			'fld_foreign_min' => '0',
 			'fld_foreign_max' => 'N',
@@ -524,7 +524,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'fld_spec_source' => '0',
 			'fld_name' => 'users',
 			'fld_eng' => 'User Count',
-			'fld_desc' => 'Indicates the total number of full Users in the SurvLoop Installation.',
+			'fld_desc' => 'Indicates the total number of full Users in the Survloop Installation.',
 			'fld_foreign_min' => 'N',
 			'fld_foreign_max' => 'N',
 			'fld_foreign2_min' => 'N',
@@ -864,7 +864,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'fld_spec_source' => '0',
 			'fld_name' => 'email',
 			'fld_eng' => 'Email Address for Updates',
-			'fld_desc' => 'Indicates the email address of the user, if they want updates on the progress of SurvLoop.',
+			'fld_desc' => 'Indicates the email address of the user, if they want updates on the progress of Survloop.',
 			'fld_foreign_min' => 'N',
 			'fld_foreign_max' => 'N',
 			'fld_foreign2_min' => 'N',
@@ -907,7 +907,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'fld_foreign_max' => 'N',
 			'fld_foreign2_min' => 'N',
 			'fld_foreign2_max' => 'N',
-			'fld_values' => 'Def::SurvLoop Coder Skills',
+			'fld_values' => 'Def::Survloop Coder Skills',
 			'fld_type' => 'INT',
 			'fld_data_type' => 'Numeric',
 			'fld_data_length' => '0',
@@ -971,7 +971,7 @@ class SurvLoopOrgSeeder extends Seeder
 			'def_database' => '1',
 			'def_set' => 'System Settings',
 			'def_subset' => 'twitter',
-			'def_description' => '@SurvLoop'
+			'def_description' => '@Survloop'
 		]);
 		DB::table('sl_definitions')->insert([
 			'def_id' => 596,
@@ -1062,41 +1062,41 @@ class SurvLoopOrgSeeder extends Seeder
 		DB::table('sl_definitions')->insert([
 			'def_id' => 695,
 			'def_database' => '1',
-			'def_subset' => 'SurvLoop Coder Skills',
+			'def_subset' => 'Survloop Coder Skills',
 			'def_value' => 'PHP'
 		]);
 		DB::table('sl_definitions')->insert([
 			'def_id' => 696,
 			'def_database' => '1',
-			'def_subset' => 'SurvLoop Coder Skills',
+			'def_subset' => 'Survloop Coder Skills',
 			'def_order' => '1',
 			'def_value' => 'Laravel'
 		]);
 		DB::table('sl_definitions')->insert([
 			'def_id' => 697,
 			'def_database' => '1',
-			'def_subset' => 'SurvLoop Coder Skills',
+			'def_subset' => 'Survloop Coder Skills',
 			'def_order' => '2',
 			'def_value' => 'Javascript'
 		]);
 		DB::table('sl_definitions')->insert([
 			'def_id' => 698,
 			'def_database' => '1',
-			'def_subset' => 'SurvLoop Coder Skills',
+			'def_subset' => 'Survloop Coder Skills',
 			'def_order' => '3',
 			'def_value' => 'jQuery / AJAX'
 		]);
 		DB::table('sl_definitions')->insert([
 			'def_id' => 699,
 			'def_database' => '1',
-			'def_subset' => 'SurvLoop Coder Skills',
+			'def_subset' => 'Survloop Coder Skills',
 			'def_order' => '4',
 			'def_value' => 'CSS'
 		]);
 		DB::table('sl_definitions')->insert([
 			'def_id' => 700,
 			'def_database' => '1',
-			'def_subset' => 'SurvLoop Coder Skills',
+			'def_subset' => 'Survloop Coder Skills',
 			'def_order' => '5',
 			'def_value' => 'GitHub'
 		]);
@@ -1304,7 +1304,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'def_database' => '1',
 			'def_set' => 'System Settings',
 			'def_subset' => 'cust-abbr',
-			'def_description' => 'SurvLoopOrg'
+			'def_description' => 'SurvloopOrg'
 		]);
 		DB::table('sl_definitions')->insert([
 			'def_id' => 463,
@@ -1384,14 +1384,14 @@ pre { background: #FCFBFF; padding: 20px; }
 			'def_database' => '1',
 			'def_set' => 'System Settings',
 			'def_subset' => 'site-name',
-			'def_description' => 'SurvLoop.org'
+			'def_description' => 'Survloop.org'
 		]);
 		DB::table('sl_definitions')->insert([
 			'def_id' => 5,
 			'def_database' => '1',
 			'def_set' => 'System Settings',
 			'def_subset' => 'meta-title',
-			'def_description' => 'SurvLoop - All Our Data Are Belong'
+			'def_description' => 'Survloop - All Our Data Are Belong'
 		]);
 		DB::table('sl_definitions')->insert([
 			'def_id' => 6,
@@ -1405,7 +1405,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'def_database' => '1',
 			'def_set' => 'System Settings',
 			'def_subset' => 'meta-keywords',
-			'def_description' => 'SurvLoop, WikiWorldOrder, app, application, survey, database, data, database design, user experience, xml,'
+			'def_description' => 'Survloop, WikiWorldOrder, app, application, survey, database, data, database design, user experience, xml,'
 		]);
 		DB::table('sl_definitions')->insert([
 			'def_id' => 8,
@@ -1580,7 +1580,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'tree_database' => '1',
 			'tree_user' => '1',
 			'tree_type' => 'Page',
-			'tree_name' => 'How To Install SurvLoop',
+			'tree_name' => 'How To Install Survloop',
 			'tree_slug' => 'how-to-install-survloop',
 			'tree_root' => '44',
 			'tree_first_page' => '44',
@@ -1747,7 +1747,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'tree_database' => '1',
 			'tree_user' => '1',
 			'tree_type' => 'Page',
-			'tree_name' => 'SurvLoop Software Documentation Overview',
+			'tree_name' => 'Survloop Software Documentation Overview',
 			'tree_slug' => 'documentation',
 			'tree_root' => '588',
 			'tree_first_page' => '588',
@@ -1769,7 +1769,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'tree_database' => '1',
 			'tree_user' => '1',
 			'tree_type' => 'Page',
-			'tree_name' => 'How To Setup SurvLoop After Installation',
+			'tree_name' => 'How To Setup Survloop After Installation',
 			'tree_slug' => 'how-to-setup-survloop',
 			'tree_root' => '1452',
 			'tree_first_page' => '1452',
@@ -1780,7 +1780,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'tree_database' => '1',
 			'tree_user' => '1',
 			'tree_type' => 'Page',
-			'tree_name' => 'How To Install SurvLoop with Docker',
+			'tree_name' => 'How To Install Survloop with Docker',
 			'tree_slug' => 'how-to-install-survloop-with-docker',
 			'tree_root' => '1641',
 			'tree_first_page' => '1641',
@@ -1813,7 +1813,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'tree_database' => '1',
 			'tree_user' => '1',
 			'tree_type' => 'Page',
-			'tree_name' => 'How A Basic Page Loads With SurvLoop',
+			'tree_name' => 'How A Basic Page Loads With Survloop',
 			'tree_slug' => 'how-a-basic-page-loads-with-survloop',
 			'tree_root' => '3082',
 			'tree_first_page' => '3082',
@@ -1824,7 +1824,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'tree_database' => '1',
 			'tree_user' => '1',
 			'tree_type' => 'Page',
-			'tree_name' => 'Introduction to the SurvLoop Codebase',
+			'tree_name' => 'Introduction to the Survloop Codebase',
 			'tree_slug' => 'introduction-to-survloop-codebase',
 			'tree_root' => '3093',
 			'tree_first_page' => '3093',
@@ -1856,8 +1856,8 @@ pre { background: #FCFBFF; padding: 20px; }
 			'tree_database' => '1',
 			'tree_user' => '1',
 			'tree_type' => 'Survey',
-			'tree_name' => 'SurvLoop Installs',
-			'tree_desc' => 'Record of all websites and systems powered by the SurvLoop open data engine.',
+			'tree_name' => 'Survloop Installs',
+			'tree_desc' => 'Record of all websites and systems powered by the Survloop open data engine.',
 			'tree_slug' => 'survloop-installs',
 			'tree_root' => '13',
 			'tree_first_page' => '-3',
@@ -1869,7 +1869,7 @@ pre { background: #FCFBFF; padding: 20px; }
 			'tree_database' => '1',
 			'tree_user' => '1',
 			'tree_type' => 'Survey XML',
-			'tree_name' => 'SurvLoop Installs',
+			'tree_name' => 'Survloop Installs',
 			'tree_slug' => 'survloop-installs',
 			'tree_root' => '12',
 			'tree_first_page' => '-3',

@@ -32,6 +32,6 @@ class SLIInstallStats extends Model
 		'inst_stat_bytes_views',
     ];
     
-    // END SurvLoop auto-generated portion of Model
+    // END Survloop auto-generated portion of Model
     
 }

@@ -1,17 +1,17 @@
 <?php
 /**
-  * SurvLoopOrgSearcher extends the SurvLoop Searcher for some hard-coded overrides.
+  * SurvloopOrgSearcher extends the Survloop Searcher for some hard-coded overrides.
   *
-  * SurvLoop.org
+  * Survloop.org
   * @package  rockhopsoft/survlooporg
   * @author  Morgan Lesko <rockhoppers@runbox.com>
   * @since 0.0
   */
-namespace SurvLoopOrg\Controllers;
+namespace SurvloopOrg\Controllers;
 
-use SurvLoop\Controllers\Searcher;
+use Survloop\Controllers\Searcher;
 
-class SurvLoopOrgSearcher extends Searcher
+class SurvloopOrgSearcher extends Searcher
 {
     
     

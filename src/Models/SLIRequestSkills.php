@@ -14,6 +14,6 @@ class SLIRequestSkills extends Model
 		'req_skl_skill', 
     ];
     
-    // END SurvLoop auto-generated portion of Model
+    // END Survloop auto-generated portion of Model
     
 }
