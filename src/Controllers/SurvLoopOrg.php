@@ -7,7 +7,7 @@
   * @author  Morgan Lesko <rockhoppers@runbox.com>
   * @since 0.0
   */
-namespace SurvloopOrg\Controllers;
+namespace RockHopSoft\SurvloopOrg\Controllers;
 
 use DB;
 use Auth;
@@ -16,8 +16,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\SLIInstallations;
 use App\Models\SLIInstallStats;
-use Survloop\Controllers\Globals\Globals;
-use Survloop\Controllers\Tree\TreeSurvForm;
+use RockHopSoft\Survloop\Controllers\Globals\Globals;
+use RockHopSoft\Survloop\Controllers\Tree\TreeSurvForm;
 
 class SurvloopOrg extends TreeSurvForm
 {

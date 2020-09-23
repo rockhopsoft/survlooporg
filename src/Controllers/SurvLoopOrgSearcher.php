@@ -7,9 +7,9 @@
   * @author  Morgan Lesko <rockhoppers@runbox.com>
   * @since 0.0
   */
-namespace SurvloopOrg\Controllers;
+namespace RockHopSoft\SurvloopOrg\Controllers;
 
-use Survloop\Controllers\Searcher;
+use RockHopSoft\Survloop\Controllers\Searcher;
 
 class SurvloopOrgSearcher extends Searcher
 {
