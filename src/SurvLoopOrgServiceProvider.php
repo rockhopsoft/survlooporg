@@ -1,7 +1,7 @@
 <?php
 namespace RockHopSoft\SurvloopOrg;
 
-use SurvloopOrg\SurvloopOrgFacade;
+use RockHopSoft\SurvloopOrg\SurvloopOrgFacade;
 use Illuminate\Support\ServiceProvider;
 
 class SurvloopOrgServiceProvider extends ServiceProvider
