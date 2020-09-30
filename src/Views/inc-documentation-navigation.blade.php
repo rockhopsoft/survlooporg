@@ -22,7 +22,6 @@
 
 <div class="pT20"><p>
 	<a href="https://github.com/rockhopsoft/survloop" target="_blank" 
-		class="btn btn-secondary btn-lg btn-block taL mB20"
-		><i class="fa fa-github mR5" aria-hidden="true"></i> 
+		><i class="fa fa-github mR3" aria-hidden="true"></i> 
 		rockhopsoft/survloop</a>
 </p></div>

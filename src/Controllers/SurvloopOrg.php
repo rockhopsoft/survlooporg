@@ -39,7 +39,10 @@ class SurvloopOrg extends TreeSurvForm
     {
         $ret = '';
         $nID = $curr->nID;
-        $docuNavs = [641, 2386, 441, 759, 999, 1081, 1793, 2281, 2681, 3088, 3099];
+        $docuNavs = [
+            641, 2386, 441, 759, 999, 1081, 1793, 
+            2281, 2681, 3088, 3099, 3141
+        ];
         if ($nID == 77) {
             $ret .= $this->gatherInstallStatTbl1($nID);
         } elseif ($nID == 81) {
@@ -307,11 +310,11 @@ class SurvloopOrg extends TreeSurvForm
                         '/how-to-install-survloop', 
                         'Install Survloop'
                     ],[
-                        '/how-to-install-laravel-on-an-ubuntu-server', 
-                        'Install Laravel on Ubuntu Server'
+                        '/how-to-install-survloop-locally-with-homestead', 
+                        'Install Locally <nobr>with Homestead</nobr>'
                     ],[
-                        '/how-to-install-laravel-locally-on-a-mac', 
-                        'Install Laravel locally <nobr>on a Mac</nobr>'
+                        '/how-to-install-survloop-on-ubuntu-20.04', 
+                        'Install on an Ubuntu Server'
                     ]
                 ]
             ],
@@ -325,8 +328,8 @@ class SurvloopOrg extends TreeSurvForm
                         '/package-files-folders-classes', 
                         'Folders, Files, & Classes'
                     ],[
-                        '/developer-work-flows', 
-                        'Developer Work Flows'
+                        '/developer-workflows', 
+                        'Developer Workflows'
                     ],[
                         '/how-a-basic-page-loads-with-survloop', 
                         'How A Basic Page Loads'

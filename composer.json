@@ -23,16 +23,16 @@
         }
     ],
     "require": {
-        "rockhopsoft/survloop": "^0.2.28"
+        "rockhopsoft/survloop": "^0.2"
     },
     "autoload": {
         "psr-4": {
-            "RockHopSoft\\SurvloopOrg\\": "src"
+            "RockHopSoft\\SurvloopOrg\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "RockHopSoft\\SurvloopOrg\\Tests\\": "tests"
+            "RockHopSoft\\SurvloopOrg\\Tests\\": "tests/"
         }
     },
     "extra": {
