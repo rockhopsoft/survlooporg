@@ -9,7 +9,7 @@
 	    <ul>
 	    @forelse ($category[1] as $j => $nav)
 	        <li>
-	        	@if ($currPage == $nav[0]) <b class="slBlueDark">{!! $nav[1] !!}</b> 
+	        	@if ($currPage == $nav[0]) <b class="slBlueDark">{!! $nav[1] !!}</b>
 	        	@else <a href="{{ $nav[0] }}">{!! $nav[1] !!}</a>
 	        	@endif
 	        </li>
@@ -20,8 +20,13 @@
 @empty
 @endforelse
 
-<div class="pT20"><p>
-	<a href="https://github.com/rockhopsoft/survloop" target="_blank" 
-		><i class="fa fa-github mR3" aria-hidden="true"></i> 
+<div class="pT20">
+	<a href="https://github.com/rockhopsoft/survloop" 
+		target="_blank"><i class="fa-brands fa-github mR3"></i>
 		rockhopsoft/survloop</a>
-</p></div>
+</div>
+<div class="pT10">
+	<a href="https://github.com/rockhopsoft/install-scripts" 
+		target="_blank"><i class="fa-brands fa-github mR3"></i>
+		rockhopsoft/install-scripts</a>
+</div>

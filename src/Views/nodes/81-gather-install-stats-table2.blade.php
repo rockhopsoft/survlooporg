@@ -20,7 +20,7 @@
             @if (isset($inst->inst_icon_url)) <img src="{{ $inst->inst_icon_url }}" border=0 > @endif </div>
             <b>{{ $inst->inst_name }}</b></a></nobr></th>
         <th> @if (isset($inst->inst_on_github)) <a href="{{ $inst->inst_on_github }}" target="_blank"
-            ><i class="fa fa-github f16" aria-hidden="true"></i></a> @endif </th>
+            ><i class="fa-brands fa-github f16"></i></a> @endif </th>
         <td class="brdLft">{{ number_format($inst->inst_stat_lines_controllers) }}</td>
         <td>{{ number_format($inst->inst_stat_lines_views) }}</td>
         <td class="brdLft">{{ $GLOBALS["SL"]->humanFilesize($inst->inst_stat_bytes_controllers, 1) }}</td>
